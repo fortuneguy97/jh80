@@ -1,0 +1,65 @@
+{
+  "addresses": {
+    "Afghanistan": [
+      "8, جاده شهید مزاری, kabul, 5000, Afghanistan",
+      "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+      "five star gas station, kabul, 1006, Afghanistan"
+    ],
+    "Albania": [
+      "Rruga Gryka E Kaçanikut, Tirana, 1030, Albania",
+      "Kalim i stacionit te trenit, Durrës, 2001, Albania",
+      "Magnolia Street, Durrës, 2015, Albania",
+      "Rruga Xhaferr Kongoli, Elbasan, 3000, Albania",
+      "Rruga e Gjon Lulit Plazh, Velipojë, 4020, Albania",
+      "Rruga Antipatrea, Berat, 5001, Albania",
+      "Rruga Rauf Nallbani, Fier, 9301, Albania",
+      "Rruga Avni Rustemi, Korçë, 7001, Albania",
+      "Rruga Naum Kristo Voskopoja, Korçë, 7001, Albania",
+      "Rruga Todi Vogli, Korçë, 7001, Albania",
+      "Shëtitorja Fan Noli, Korçë, 7001, Albania",
+      "Rruga Dhimitër Rëmbeci, Korçë, 7001, Albania",
+      "Rruga Ligor Rembeci, Korçë, 7001, Albania",
+      "Tanush Topiaj Square, Krujë, 1501, Albania",
+      "Gjergj Kastrioti Skënderbeu, Krujë, 1501, Albania"
+    ],
+    "Algeria": [
+      "Route de l'aéroport طريق المطار, Bab Ezzouar, 16110, Algeria",
+      "Avenue el Hamiz, Bordj El Kiffan, 16031, Algeria",
+      "طريق المطار, Constantine ⵇⵙⴻⵟⵉⵏⴰ قسنطينة, 25001, Algeria",
+      "Boulevard Belaid Belkacem, Annaba ⵄⴻⵍⵍⴰⴱⴰ عنابة, 23010, Algeria",
+      "Avenue de l'ALN, Annaba ⵄⴻⵍⵍⴰⴱⴰ عنابة, 23000, Algeria",
+      "Boulevard Larbi Tebessi, Blida, 09000, Algeria",
+      "Rue du 11 Décembre 1960, Blida, 09000, Algeria",
+      "Autoroute Est-Ouest, El Affroun, 09011, Algeria",
+      "Chemin Fernane Hannafi, Hussein Dey, 16005, Algeria",
+      "نهج سعيد بوخريسة, Sétif, 19000, Algeria",
+      "شارع عقبة بن نافع, Biskra, 07000, Algeria",
+      "طريق المطار, Tébessa ⵜⴱⴻⵙⵙⴰ تبسة, 12000, Algeria",
+      "شارع الشهداء, Tébessa ⵜⴱⴻⵙⵙⴰ تبسة, 12000, Algeria",
+      "Boulevard Abdelhamid Ben Badis, Chlef, 02000, Algeria",
+      "Boulevard Abdelhamid Ben Badis, Chlef ⵛⵍⴻⴼ الشلف, 02000, Algeria"
+    ],
+    "Andorra": [
+      "26, Avinguda de Tarragona, Andorra la Vella, AD500, Andorra",
+      "Carrer Prat de la Creu, Andorra la Vella, AD500, Andorra",
+      "Plaça Guillemó, Andorra la Vella, AD500, Andorra",
+      "Rambla Molines, Andorra la Vella, 500, Andorra",
+      "Carrer Dr. Vilanova, Andorra la Vella, AD500, Andorra",
+      "Carrer Consòrcia, Andorra la Vella, AD500, Andorra",
+      "Baixada del Molí, Andorra la Vella, AD500, Andorra",
+      "Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+      "Placeta del Madriu, les Escaldes, AD700, Andorra",
+      "Carrer del Picó, les Escaldes, AD700, Andorra",
+      "Avinguda de les Escoles, les Escaldes, AD700, Andorra",
+      "Avinguda Fiter i Rossell, les Escaldes, AD700, Andorra",
+      "Avinguda Carlemany, les Escaldes, AD700, Andorra"
+    ]
+  },
+  "generated_at": "2025-12-01 12:16:09",
+  "total_countries": 196,
+  "cached_countries": 4,
+  "failed_countries": [
+    "Afghanistan",
+    "Andorra"
+  ]
+}

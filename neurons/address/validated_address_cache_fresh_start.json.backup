@@ -1,0 +1,27 @@
+{
+  "addresses": {
+    "Afghanistan": [
+      {
+        "address": "8, جاده شهید مزاری, kabul, 5000, Afghanistan",
+        "score": 0.9,
+        "normalized_address": "8 جاده شهید مزاری kabul 5000 afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "score": 1.0,
+        "normalized_address": "seh aqrab road kabul 1006 afghanistan"
+      },
+      {
+        "address": "five star gas station, kabul, 1006, Afghanistan",
+        "score": 0.9,
+        "normalized_address": "five star gas station kabul 1006 afghanistan"
+      }
+    ]
+  },
+  "generated_at": "2025-12-01 23:03:42",
+  "total_countries": 196,
+  "cached_countries": 1,
+  "failed_countries": [
+    "Afghanistan"
+  ]
+}

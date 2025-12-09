@@ -1,0 +1,16 @@
+{
+  "country": "Russia",
+  "perfect_addresses": [],
+  "count": 0,
+  "stats": {
+    "attempts": 6,
+    "candidates_tested": 64,
+    "perfect_found": 0,
+    "heuristic_passed": 64,
+    "region_passed": 46,
+    "api_passed": 0,
+    "api_failed": 64,
+    "api_timeout": 0
+  },
+  "timestamp": "2025-11-25T11:07:24Z"
+}

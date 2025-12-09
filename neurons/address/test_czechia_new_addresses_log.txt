@@ -1,0 +1,275 @@
+================================================================================
+TESTING 15 CZECHIA ADDRESSES
+================================================================================
+
+Testing Address 1: 875/6a, Heršpická, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, 639 00, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccccdeeeeehhhhiiiijjjkkkkkmmnnoooooooooprrrrrrrssssssttvvyyy
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 875/6a, Heršpická, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, 639 00, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: 875/6a, Heršpická, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, 639 00, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'875', '00', '639', '6'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+    Result 2: name 'Brno 8' not in address (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 2: Heršpická 875/6a, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, Česko 639 00
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccccdeeeeehhhhiiiijjjkkkkkmmnnoooooooooprrrrrrrssssssttvvyyy
+  ⚠ DUPLICATE: Same normalized address as Address 1
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Heršpická 875/6a, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, Česko 639 00
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 3: Štýřice, Heršpická 875/6a, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccccdeeeeehhhhiiiijjjkkkkkmmnnoooooooooprrrrrrrssssssttvvyyy
+  ⚠ DUPLICATE: Same normalized address as Address 1
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Štýřice, Heršpická 875/6a, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 4: Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Jihomoravský kraj, 639 00, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccceeeeehhiiijjkkkkkmmnnoooooooprrrrrrrssssssttvyy
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Jihomoravský kraj, 639 00, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: Brno 8, 875/6a, Heršpická, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, 639 00, Č
+  → First result place_rank: 30
+  → Numbers in address: {'875', '00', '639', '6'}
+    Result 1: name 'Brno 8' not in address (filtered out)
+  → Filtered results: 0
+  ✗ FAILED: No results passed filters (place_rank >= 20, name match, number match)
+
+Testing Address 5: Heršpická 875/6a, Brno, Štýřice, okres Brno-město, Jihomoravský kraj, Jihovýchod, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccccdeeeeehhhhiiiijjjkkkkkmmnnoooooooooprrrrrrrssssssttvvyyy
+  ⚠ DUPLICATE: Same normalized address as Address 1
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Heršpická 875/6a, Brno, Štýřice, okres Brno-město, Jihomoravský kraj, Jihovýchod, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: 875/6a, Heršpická, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, 639 00, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'875', '6'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: name 'Brno 8' not in address (filtered out)
+  → Filtered results: 0
+  ✗ FAILED: No results passed filters (place_rank >= 20, name match, number match)
+
+Testing Address 6: 875/6a Heršpická, Brno, Štýřice, okres Brno-město, Jihomoravský kraj, 639 00, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccceeeeehhiiijjkkkkkmmnnoooooooprrrrrrrssssssttvyy
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 875/6a Heršpická, Brno, Štýřice, okres Brno-město, Jihomoravský kraj, 639 00, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: 875/6a, Heršpická, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, 639 00, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'875', '00', '639', '6'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+    Result 2: name 'Brno 8' not in address (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 7: 875/6a Heršpická, Štýřice, okres Brno-město, Brno, Jihomoravský kraj, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccceeeeehhiiijjkkkkkmmnnoooooooprrrrrrrssssssttvyy
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 875/6a Heršpická, Štýřice, okres Brno-město, Brno, Jihomoravský kraj, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: 875/6a, Heršpická, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, 639 00, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'875', '6'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: name 'Brno 8' not in address (filtered out)
+  → Filtered results: 0
+  ✗ FAILED: No results passed filters (place_rank >= 20, name match, number match)
+
+Testing Address 8: Heršpická 875/6a, okres Brno-město, Brno, Štýřice, Jihomoravský kraj, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccceeeeehhiiijjkkkkkmmnnoooooooprrrrrrrssssssttvyy
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Heršpická 875/6a, okres Brno-město, Brno, Štýřice, Jihomoravský kraj, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: 875/6a, Heršpická, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, 639 00, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'875', '6'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: name 'Brno 8' not in address (filtered out)
+  → Filtered results: 0
+  ✗ FAILED: No results passed filters (place_rank >= 20, name match, number match)
+
+Testing Address 9: Štýřice, Brno, Heršpická 875/6a, okres Brno-město, Jihovýchod, 639 00, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aabbccccdeeeeehhhiiijkkkmnnoooooooprrrrrsssssttvyy
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Štýřice, Brno, Heršpická 875/6a, okres Brno-město, Jihovýchod, 639 00, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 10: Jihomoravský kraj, Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccceeeeehhiiijjkkkkkmmnnoooooooprrrrrrrssssssttvyy
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Jihomoravský kraj, Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 11: Jihovýchod, Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aabbccccdeeeeehhhiiijkkkmnnoooooooprrrrrsssssttvyy
+  ⚠ DUPLICATE: Same normalized address as Address 9
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Jihovýchod, Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 12: okres Brno-město, Štýřice, Heršpická 875/6a, Brno, Jihomoravský kraj, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccceeeeehhiiijjkkkkkmmnnoooooooprrrrrrrssssssttvyy
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: okres Brno-město, Štýřice, Heršpická 875/6a, Brno, Jihomoravský kraj, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 13: 639 00 Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Jihomoravský kraj, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccceeeeehhiiijjkkkkkmmnnoooooooprrrrrrrssssssttvyy
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 639 00 Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Jihomoravský kraj, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 14: Česko, Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Jihomoravský kraj
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabbccceeeeehhiiijjkkkkkmmnnoooooooprrrrrrrssssssttvyy
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Česko, Brno, Heršpická 875/6a, Štýřice, okres Brno-město, Jihomoravský kraj
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 15: Brno, 639 00, Heršpická 875/6a, Štýřice, okres Brno-město, Česko
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aabbccceeeeehiikkkmnnoooooprrrrrssssstty
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Brno, 639 00, Heršpická 875/6a, Štýřice, okres Brno-město, Česko
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+================================================================================
+SUMMARY
+================================================================================
+
+Total addresses: 1
+  ✅ Passed (score >= 0.9): 0
+  ✗ Failed (score < 0.9): 1
+  ⏱ Timeout: 0
+  ❌ Errors: 0
+
+Unique normalized addresses: 1
+Duplicate normalized addresses: 0
+
+✗ FAILED ADDRESSES:
+  15. Brno, 639 00, Heršpická 875/6a, Štýřice, okres Brno-město, Česko
+
+⚠ DUPLICATE GROUPS:
+  Group 1: Addresses 1, 2, 3, 5
+    #1: Brno, 639 00, Heršpická 875/6a, Štýřice, okres Brno-město, Česko
+         Normalized: aabbccceeeeehiikkkmnnoooooprrrrrssssstty
+  Group 4: Addresses 4, 6, 7, 8, 10, 12, 13, 14
+  Group 9: Addresses 9, 11
+

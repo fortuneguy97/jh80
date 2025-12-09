@@ -1,0 +1,335 @@
+{
+  "addresses": {
+    "Afghanistan": [
+      {
+        "address": "8, جاده شهید مزاری, kabul, 5000, Afghanistan",
+        "score": 0.9,
+        "normalized_address": "8 جاده شهید مزاری kabul 5000 afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "score": 1.0,
+        "normalized_address": "seh aqrab road kabul 1006 afghanistan"
+      },
+      {
+        "address": "five star gas station, kabul, 1006, Afghanistan",
+        "score": 0.9,
+        "normalized_address": "five star gas station kabul 1006 afghanistan"
+      }
+    ],
+    "Albania": [
+      {
+        "address": "56, Rruga Agaveve, Durrës, 2008, Albania",
+        "score": 1.0,
+        "normalized_address": "56 rruga agaveve durrës 2008 albania"
+      },
+      {
+        "address": "26, Bulevardi i Palmave, Golem, 2504, Albania",
+        "score": 1.0,
+        "normalized_address": "26 bulevardi i palmave golem 2504 albania"
+      },
+      {
+        "address": "13, Rruga Pavarësia, Durrës, 2001, Albania",
+        "score": 1.0,
+        "normalized_address": "13 rruga pavarësia durrës 2001 albania"
+      },
+      {
+        "address": "784, Hysen Kërtusha, Durrës, 2000, Albania",
+        "score": 0.9,
+        "normalized_address": "784 hysen kërtusha durrës 2000 albania"
+      },
+      {
+        "address": "10, Rruga Shtojzavallet, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "10 rruga shtojzavallet durrës 2021 albania"
+      },
+      {
+        "address": "20, Rruga Mihal Grameno, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "20 rruga mihal grameno durrës 2021 albania"
+      },
+      {
+        "address": "62, Rruga Shkola Arapaj, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "62 rruga shkola arapaj durrës 2021 albania"
+      },
+      {
+        "address": "57, Rruga Shkola Arapaj, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "57 rruga shkola arapaj durrës 2021 albania"
+      },
+      {
+        "address": "6, Bulevardi i Palmave, Golem, 2504, Albania",
+        "score": 1.0,
+        "normalized_address": "6 bulevardi i palmave golem 2504 albania"
+      },
+      {
+        "address": "40, Bulevardi i Palmave, Golem, 2504, Albania",
+        "score": 1.0,
+        "normalized_address": "40 bulevardi i palmave golem 2504 albania"
+      },
+      {
+        "address": "92, Bulevardi i Pishave, Golem, 2504, Albania",
+        "score": 1.0,
+        "normalized_address": "92 bulevardi i pishave golem 2504 albania"
+      },
+      {
+        "address": "117, Bulevardi i Pishave, Golem, 2504, Albania",
+        "score": 1.0,
+        "normalized_address": "117 bulevardi i pishave golem 2504 albania"
+      },
+      {
+        "address": "119, Bulevardi i Pishave, Golem, 2504, Albania",
+        "score": 1.0,
+        "normalized_address": "119 bulevardi i pishave golem 2504 albania"
+      },
+      {
+        "address": "16, Rruga Ramazan Njala, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "16 rruga ramazan njala durrës 2021 albania"
+      },
+      {
+        "address": "6, Rruga Ramazan Njala, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "6 rruga ramazan njala durrës 2021 albania"
+      }
+    ],
+    "Algeria": [
+      {
+        "address": "24, Cité 632 Logements, Mohammadia, 16058, Algeria",
+        "score": 1.0,
+        "normalized_address": "24 cité 632 logements mohammadia 16058 algeria"
+      },
+      {
+        "address": "25, Cité 632 Logements, Mohammadia, 16058, Algeria",
+        "score": 1.0,
+        "normalized_address": "25 cité 632 logements mohammadia 16058 algeria"
+      },
+      {
+        "address": "23, Cité 632 Logements, Mohammadia, 16058, Algeria",
+        "score": 1.0,
+        "normalized_address": "23 cité 632 logements mohammadia 16058 algeria"
+      },
+      {
+        "address": "22, Cité 632 Logements, Mohammadia, 16058, Algeria",
+        "score": 1.0,
+        "normalized_address": "22 cité 632 logements mohammadia 16058 algeria"
+      },
+      {
+        "address": "16, Unité de Protection civile, 16000, Algeria",
+        "score": 1.0,
+        "normalized_address": "16 unité de protection civile 16000 algeria"
+      },
+      {
+        "address": "BNP Paribas El Djazaïr, حيدرة, 16035, Algeria",
+        "score": 1.0,
+        "normalized_address": "bnp paribas el djazaïr حيدرة 16035 algeria"
+      },
+      {
+        "address": "Bureau de poste de Birtouta, 16045, Algeria",
+        "score": 1.0,
+        "normalized_address": "bureau de poste de birtouta 16045 algeria"
+      },
+      {
+        "address": "Pizza Pino, Bir Mourad Raïs, 16035, Algeria",
+        "score": 1.0,
+        "normalized_address": "pizza pino bir mourad raïs 16035 algeria"
+      },
+      {
+        "address": "8 ème Sûreté urbaine, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "8 ème sûreté urbaine oran 31000 algeria"
+      },
+      {
+        "address": "Tabac Journeaux, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "tabac journeaux oran 31000 algeria"
+      },
+      {
+        "address": "Supermarché khawadja, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "supermarché khawadja oran 31000 algeria"
+      },
+      {
+        "address": "Mosquée Salman el Farissi, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "mosquée salman el farissi oran 31000 algeria"
+      },
+      {
+        "address": "Hôtel des finances, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "hôtel des finances oran 31000 algeria"
+      },
+      {
+        "address": "Lingerie Giovanni, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "lingerie giovanni oran 31000 algeria"
+      },
+      {
+        "address": "GSNautomotive, Bir El Djir, 31028, Algeria",
+        "score": 0.9,
+        "normalized_address": "gsnautomotive bir el djir 31028 algeria"
+      }
+    ],
+    "Andorra": [
+      {
+        "address": "53, Avinguda de Tarragona, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "53 avinguda de tarragona andorra la vella ad500 andorra"
+      },
+      {
+        "address": "3, Carrer de l'obac, Escaldes-Engordany, AD700, Andorra",
+        "score": 1.0,
+        "normalized_address": "3 carrer de l'obac escaldes engordany ad700 andorra"
+      },
+      {
+        "address": "15, Avinguda Doctor Mitjavila, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "15 avinguda doctor mitjavila andorra la vella ad500 andorra"
+      },
+      {
+        "address": "69, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "69 avinguda meritxell andorra la vella ad500 andorra"
+      },
+      {
+        "address": "71, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "71 avinguda meritxell andorra la vella ad500 andorra"
+      },
+      {
+        "address": "61, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "61 avinguda meritxell andorra la vella ad500 andorra"
+      },
+      {
+        "address": "59, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "59 avinguda meritxell andorra la vella ad500 andorra"
+      },
+      {
+        "address": "88, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "88 avinguda meritxell andorra la vella ad500 andorra"
+      },
+      {
+        "address": "51, Carrer Pau Casals, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "51 carrer pau casals andorra la vella ad500 andorra"
+      },
+      {
+        "address": "94, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "94 avinguda meritxell andorra la vella ad500 andorra"
+      },
+      {
+        "address": "22, Carrer de la Geneta, Juberri, AD600, Andorra",
+        "score": 1.0,
+        "normalized_address": "22 carrer de la geneta juberri ad600 andorra"
+      },
+      {
+        "address": "87, Avinguda del Princep Benlloch, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "87 avinguda del princep benlloch andorra la vella ad500 andorra"
+      },
+      {
+        "address": "30, Avinguda del Princep Benlloch, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "30 avinguda del princep benlloch andorra la vella ad500 andorra"
+      },
+      {
+        "address": "Avinguda de Tarragona, Andorra la Vella, AD500, Andorra",
+        "score": 0.9,
+        "normalized_address": "avinguda de tarragona andorra la vella ad500 andorra"
+      },
+      {
+        "address": "Carrer Esteve Dolsa Pujol, Andorra la Vella, AD500, Andorra",
+        "score": 0.9,
+        "normalized_address": "carrer esteve dolsa pujol andorra la vella ad500 andorra"
+      }
+    ],
+    "Angola": [
+      {
+        "address": "233, Largo Serpa Pinto, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "233 largo serpa pinto luanda angola"
+      },
+      {
+        "address": "19a, Avenida Pedro de C. Vandunem-Loy, Luanda, Angola",
+        "score": 1.0,
+        "normalized_address": "19a avenida pedro de c. vandunem loy luanda angola"
+      },
+      {
+        "address": "1, Avenida Pedro de C. Vandunem-Loy, Luanda, Angola",
+        "score": 1.0,
+        "normalized_address": "1 avenida pedro de c. vandunem loy luanda angola"
+      },
+      {
+        "address": "21, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "21 rua de josé de oliveira barbosa luanda angola"
+      },
+      {
+        "address": "18, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "18 rua de josé de oliveira barbosa luanda angola"
+      },
+      {
+        "address": "20, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "20 rua de josé de oliveira barbosa luanda angola"
+      },
+      {
+        "address": "30, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "30 rua de josé de oliveira barbosa luanda angola"
+      },
+      {
+        "address": "39, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "39 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "33, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "33 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "35, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "35 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "29, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "29 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "27, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "27 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "21, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "21 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "23, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "23 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "19, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "19 rua doutor josé maria antunes luanda angola"
+      }
+    ]
+  },
+  "generated_at": "2025-12-02 14:42:10",
+  "total_countries": 196,
+  "cached_countries": 5,
+  "failed_countries": [
+    "Afghanistan"
+  ]
+}

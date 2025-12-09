@@ -1,0 +1,214 @@
+================================================================================
+TESTING 15 CZECHIA ADDRESSES
+================================================================================
+
+Testing Address 1: 174, náměstí Míru, Zlín, 760 01, Central Moravia, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaccceeehiiiiillmmmnnnorrrsttuvzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 174, náměstí Míru, Zlín, 760 01, Central Moravia, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 3
+  → First result: 174, náměstí Míru, Zlín, okres Zlín, Zlínský kraj, Střední Morava, 760 01, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'01', '760', '174'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+    Result 2: name 'Tam Tam restaurant' not in address (filtered out)
+    Result 3: name 'Starbucks' not in address (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 2: 174, náměstí Míru, Zlín, 760 01, Zlín Region, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aacceeeghiiiiilmmnnnorrstuzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 174, náměstí Míru, Zlín, 760 01, Zlín Region, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 3
+  → First result: 174, náměstí Míru, Zlín, okres Zlín, Zlínský kraj, Střední Morava, 760 01, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'01', '760', '174'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+    Result 2: name 'Tam Tam restaurant' not in address (filtered out)
+    Result 3: name 'Starbucks' not in address (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 3: 174, náměstí Míru, Zlín District, 760 01, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aacccdeehiiiiiilmmnnrrsstttuzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 174, náměstí Míru, Zlín District, 760 01, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 4: 174, náměstí Míru, Zlín, 760 01, Moravia, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaacceehiiiiilmmmnnorrstuvzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 174, náměstí Míru, Zlín, 760 01, Moravia, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 3
+  → First result: 174, náměstí Míru, Zlín, okres Zlín, Zlínský kraj, Střední Morava, 760 01, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'01', '760', '174'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+    Result 2: name 'Tam Tam restaurant' not in address (filtered out)
+    Result 3: name 'Starbucks' not in address (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 5: 174, náměstí Míru, Zlín, 760 01, Southeast, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaacceeehhiiiilmmnnorssstttuuzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 174, náměstí Míru, Zlín, 760 01, Southeast, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 6: Tam Tam restaurant, 174, náměstí Míru, Zlín, 760 01, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaacceeehiiiilmmmnnnrrrssttttuuzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Tam Tam restaurant, 174, náměstí Míru, Zlín, 760 01, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: Tam Tam restaurant, 174, náměstí Míru, Zlín, okres Zlín, Zlínský kraj, Střední Morava, 760 01, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'01', '760', '174'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 7: Tam Tam restaurant, 174, náměstí Míru, Zlín, 760 01, Moravia, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaacceeehiiiiilmmmmnnnorrrrssttttuuvzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Tam Tam restaurant, 174, náměstí Míru, Zlín, 760 01, Moravia, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: Tam Tam restaurant, 174, náměstí Míru, Zlín, okres Zlín, Zlínský kraj, Střední Morava, 760 01, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'01', '760', '174'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 8: Starbucks, 174, náměstí Míru, Zlín, 760 01, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaabccceehiiiiklmmnnrrsssttuuzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Starbucks, 174, náměstí Míru, Zlín, 760 01, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: Starbucks, 174, náměstí Míru, Zlín, okres Zlín, Zlínský kraj, Střední Morava, 760 01, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'01', '760', '174'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 9: Starbucks, 174, náměstí Míru, Zlín, 760 01, Central Moravia, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaabcccceeehiiiiikllmmmnnnorrrrssstttuuvzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Starbucks, 174, náměstí Míru, Zlín, 760 01, Central Moravia, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: Starbucks, 174, náměstí Míru, Zlín, okres Zlín, Zlínský kraj, Střední Morava, 760 01, Česko
+  → First result place_rank: 30
+  → Numbers in address: {'01', '760', '174'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 10: 174, náměstí Míru, Zlín Historic Area, 760 01, Czechia
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaccceeehhiiiiiilmmnnorrrssttuzz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 174, náměstí Míru, Zlín Historic Area, 760 01, Czechia
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+================================================================================
+SUMMARY
+================================================================================
+
+Total addresses: 1
+  ✅ Passed (score >= 0.9): 0
+  ✗ Failed (score < 0.9): 1
+  ⏱ Timeout: 0
+  ❌ Errors: 0
+
+Unique normalized addresses: 1
+Duplicate normalized addresses: 0
+
+✗ FAILED ADDRESSES:
+  10. 174, náměstí Míru, Zlín Historic Area, 760 01, Czechia
+

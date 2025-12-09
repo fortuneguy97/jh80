@@ -1,0 +1,82 @@
+{
+  "addresses": {
+    "Afghanistan": [
+      "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+      "8, جاده شهید مزاری, kabul, 5000, Afghanistan",
+      "five star gas station, kabul, 1006, Afghanistan"
+    ],
+    "Albania": [
+      "10, Rruga Shtojzavallet, Durrës, 2021, Albania",
+      "117, Bulevardi i Pishave, Golem, 2504, Albania",
+      "119, Bulevardi i Pishave, Golem, 2504, Albania",
+      "12, Rruga Bregu i Detit, Durrës, 2021, Albania",
+      "13, Rruga Pavarësia, Durrës, 2001, Albania",
+      "16, Rruga Ramazan Njala, Durrës, 2021, Albania",
+      "20, Rruga Mihal Grameno, Durrës, 2021, Albania",
+      "26, Bulevardi i Palmave, Golem, 2504, Albania",
+      "40, Bulevardi i Palmave, Golem, 2504, Albania",
+      "56, Rruga Agaveve, Durrës, 2008, Albania",
+      "57, Rruga Shkola Arapaj, Durrës, 2021, Albania",
+      "6, Bulevardi i Palmave, Golem, 2504, Albania",
+      "6, Rruga Ramazan Njala, Durrës, 2021, Albania",
+      "62, Rruga Shkola Arapaj, Durrës, 2021, Albania",
+      "92, Bulevardi i Pishave, Golem, 2504, Albania"
+    ],
+    "Algeria": [
+      "1003, Cite Sakiet Sidi Youcef, Constantine, 25000, Algeria",
+      "1004, ساقية سيدي يوسف, Constantine, 25000, Algeria",
+      "16, Unité de Protection civile, 16000, Algeria",
+      "22, Cité 632 Logements, Mohammadia, 16058, Algeria",
+      "23, Cité 632 Logements, Mohammadia, 16058, Algeria",
+      "24, Cité 632 Logements, Mohammadia, 16058, Algeria",
+      "25, Cité 632 Logements, Mohammadia, 16058, Algeria",
+      "BNP Paribas El Djazaïr, حيدرة, 16035, Algeria",
+      "Bureau de poste de Birtouta, 16045, Algeria",
+      "Caisse Nationale des Assurances Sociales des Travailleurs Salariés, Oran, 31000, Algeria",
+      "Ecole Normale Supérieure de Constantine, Constantine, 25000, Algeria",
+      "Hôtel militaire, Constantine, 25000, Algeria",
+      "Pizza Pino, Bir Mourad Raïs, 16035, Algeria",
+      "Pâtisserie les falaises, Constantine, 25000, Algeria",
+      "Salle de musculation, Constantine, 25000, Algeria"
+    ],
+    "Andorra": [
+      "15, Avinguda Doctor Mitjavila, Andorra la Vella, AD500, Andorra",
+      "22, Carrer de la Geneta, Juberri, AD600, Andorra",
+      "3, Carrer de l'obac, Escaldes-Engordany, AD700, Andorra",
+      "30, Avinguda del Princep Benlloch, Andorra la Vella, AD500, Andorra",
+      "51, Carrer Pau Casals, Andorra la Vella, AD500, Andorra",
+      "53, Avinguda de Tarragona, Andorra la Vella, AD500, Andorra",
+      "59, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+      "61, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+      "69, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+      "71, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+      "87, Avinguda del Princep Benlloch, Andorra la Vella, AD500, Andorra",
+      "88, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+      "94, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+      "Residential de l'Aldosa, L’Aldosa, AD400, Andorra",
+      "Sant Esteve de Juberri, Juberri, AD600, Andorra"
+    ],
+    "Angola": [
+      "1, Avenida Pedro de C. Vandunem-Loy, Luanda, Angola",
+      "10, Rua Afonso Albuquerque, Benguela, Angola",
+      "11, Comandante Eurico, Luanda, Angola",
+      "11, Rua Doutor José Maria Antunes, Luanda, Angola",
+      "13A, Rua Doutor José Maria Antunes, Luanda, Angola",
+      "15, Comandante Eurico, Luanda, Angola",
+      "15, Rua Doutor José Maria Antunes, Luanda, Angola",
+      "17, Rua Doutor José Maria Antunes, Luanda, Angola",
+      "19, Rua Doutor José Maria Antunes, Luanda, Angola",
+      "1º Conservatório do Registo Civil, Luanda, Angola",
+      "20, Rua de José de Oliveira Barbosa, Luanda, Angola",
+      "21, Comandante Eurico, Luanda, Angola",
+      "21, Rua Doutor José Maria Antunes, Luanda, Angola",
+      "21, Rua de José de Oliveira Barbosa, Luanda, Angola",
+      "23, Comandante Eurico, Luanda, Angola"
+    ]
+  },
+  "generated_at": "2025-11-27 20:20:19",
+  "total_countries": 196,
+  "cached_countries": 5,
+  
+  "failed_countries": []
+}

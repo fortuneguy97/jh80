@@ -1,0 +1,326 @@
+{
+  "addresses": {
+    "Afghanistan": [
+      {
+        "address": "8, جاده شهید مزاری, kabul, 5000, Afghanistan",
+        "score": 0.9,
+        "normalized_address": "aaaabddfghhhhijklmnnrsstuyyz"
+      },
+      {
+        "address": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "score": 1.0,
+        "normalized_address": "aaaaaaabbdefghhiklnnoqrrsstu"
+      },
+      {
+        "address": "five star gas station, kabul, 1006, Afghanistan",
+        "score": 0.9,
+        "normalized_address": "aaaaaaabeffgghiiiklnnnorssssttttuv"
+      }
+    ],
+    "Albania": [
+      {
+        "address": "6, Rruga Gryka E Kaçanikut, Tirana, 1050, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaaaaabceggiiikkklnnnrrrrttuuy"
+      },
+      {
+        "address": "8, Jeronim de Rada, Kashar, 1050, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaaabddeehiijklmnnorrrs"
+      },
+      {
+        "address": "5, Rruga Jeronim de Rada, Kashar, 1050, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaaaabddeeghiijklmnnorrrrrsu"
+      },
+      {
+        "address": "56, Rruga Agaveve, Durrës, 2008, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaabdeeeggilnrrrrsuuvv"
+      },
+      {
+        "address": "26, Bulevardi i Palmave, Golem, 2504, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaabbdeeegiiillllmmnopruvv"
+      },
+      {
+        "address": "13, Rruga Pavarësia, Durrës, 2001, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaaabdeegiilnprrrrrssuuv"
+      },
+      {
+        "address": "784, Hysen Kërtusha, Durrës, 2000, Albania",
+        "score": 0.9,
+        "normalized_address": "aaaabdeeehhiklnnrrrssstuuy"
+      },
+      {
+        "address": "10, Rruga Shtojzavallet, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaabdeeghijlllnorrrrssttuuvz"
+      },
+      {
+        "address": "20, Rruga Mihal Grameno, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaabdeegghiillmmnnorrrrrsuu"
+      },
+      {
+        "address": "62, Rruga Shkola Arapaj, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaaaabdeghijkllnoprrrrrssuu"
+      },
+      {
+        "address": "92, Bulevardi i Pishave, Golem, 2504, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaabbdeeeghiiiilllmnoprsuvv"
+      },
+      {
+        "address": "16, Rruga Ramazan Njala, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaaaaaaabdegijllmnnnrrrrrsuuz"
+      },
+      {
+        "address": "12, Rruga Bregu i Detit, Durrës, 2021, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaabbddeeeggiiilnrrrrrsttuuu"
+      },
+      {
+        "address": "3, Western Union, Durrës, 2000, Albania",
+        "score": 1.0,
+        "normalized_address": "aaabdeeeiilnnnnorrrsstuuw"
+      },
+      {
+        "address": "L13, Pula Në Prush, Durrës, 2001, Albania",
+        "score": 1.0,
+        "normalized_address": "aaaabdeehilllnnpprrrssuuu"
+      }
+    ],
+    "Algeria": [
+      {
+        "address": "24, Cité 632 Logements, Mohammadia, 16058, Algeria",
+        "score": 1.0,
+        "normalized_address": "aaaaacdeeeegghiiillmmmmnoorstt"
+      },
+      {
+        "address": "16, Unité de Protection civile, 16000, Algeria",
+        "score": 1.0,
+        "normalized_address": "aaccdeeeeegiiiiillnnooprrtttuv"
+      },
+      {
+        "address": "BNP Paribas El Djazaïr, حيدرة, 16035, Algeria",
+        "score": 1.0,
+        "normalized_address": "aaaaaabbddeeghiiijllnpprrrrsyz"
+      },
+      {
+        "address": "Bureau de poste de Birtouta, 16045, Algeria",
+        "score": 1.0,
+        "normalized_address": "aaaabbdeeeegiilooprrrstttuuu"
+      },
+      {
+        "address": "Pizza Pino, Bir Mourad Raïs, 16035, Algeria",
+        "score": 1.0,
+        "normalized_address": "aaaaabdegiiiiilmnoopprrrrsuzz"
+      },
+      {
+        "address": "8 ème Sûreté urbaine, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaaabeeeeeegiilmnnorrrrstuu"
+      },
+      {
+        "address": "Tabac Journeaux, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaaaaabceegijlnnoorrrtuux"
+      },
+      {
+        "address": "Supermarché khawadja, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaaaaaacdeeeghhijklmnoprrrrsuw"
+      },
+      {
+        "address": "Mosquée Salman el Farissi, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaaaaaeeeefgiiilllmmnnooqrrrssssu"
+      },
+      {
+        "address": "Hôtel des finances, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaaacdeeeefghiillnnnoorrsst"
+      },
+      {
+        "address": "Lingerie Giovanni, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaaaeeegggiiiiillnnnnoorrrv"
+      },
+      {
+        "address": "GSNautomotive, Bir El Djir, 31028, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaabdeeeggiiiijllmnoorrrsttuv"
+      },
+      {
+        "address": "Cabinet President d'APC, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaaaabccddeeeegiiilnnnopprrrstt"
+      },
+      {
+        "address": "Clinique El Abed, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaaabcdeeeegiiilllnnoqrru"
+      },
+      {
+        "address": "SARL Ops (La voix de l'oranie), Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "aaaaaadeeegiiillllnnooooprrrrssvx"
+      }
+    ],
+    "Andorra": [
+      {
+        "address": "53, Avinguda de Tarragona, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaaaaaaddddeeggilllnnnoorrrrtuvv"
+      },
+      {
+        "address": "3, Carrer de l'obac, Escaldes-Engordany, AD700, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaaabcccdddddeeeeegllnnnooorrrrrrssy"
+      },
+      {
+        "address": "15, Avinguda Doctor Mitjavila, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaaaaacddddegiiijllllmnnooorrrttuvvv"
+      },
+      {
+        "address": "69, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaaadddeeegiilllllmnnorrrtuvvx"
+      },
+      {
+        "address": "51, Carrer Pau Casals, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaaaaaccddeellllnoprrrrrssuv"
+      },
+      {
+        "address": "22, Carrer de la Geneta, Juberri, AD600, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaabcdddeeeeegijlnnorrrrrrrtu"
+      },
+      {
+        "address": "87, Avinguda del Princep Benlloch, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaaabccddddeeeeghiillllllnnnnoopprrruvv"
+      },
+      {
+        "address": "Carrer Esteve Dolsa Pujol, Andorra la Vella, AD500, Andorra",
+        "score": 0.9,
+        "normalized_address": "aaaaaaacdddeeeeejlllllnoooprrrrrsstuvv"
+      },
+      {
+        "address": "Sant Esteve de Juberri, Juberri, AD600, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaabdddeeeeeijnnorrrrssttuv"
+      },
+      {
+        "address": "Residential de l'Aldosa, L’Aldosa, AD400, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaadddddeeeiilllnnoorrrsst"
+      },
+      {
+        "address": "BonÀrea, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaaabddeelllnnoorrrv"
+      },
+      {
+        "address": "Oficina de Turisme, Encamp, AD200, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaaccdddeeefiiimmnnnooprrrstu"
+      },
+      {
+        "address": "Sant Roc de Sornàs, Sornàs, AD300, Andorra",
+        "score": 1.0,
+        "normalized_address": "aaaaacdddennnooorrrrssst"
+      }
+    ],
+    "Angola": [
+      {
+        "address": "233, Largo Serpa Pinto, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaadeggilllnnnooopprrstu"
+      },
+      {
+        "address": "19a, Avenida Pedro de C. Vandunem-Loy, Luanda, Angola",
+        "score": 1.0,
+        "normalized_address": "aaaaaaaacdddddeeeegilllmnnnnnooopruuvvy"
+      },
+      {
+        "address": "1, Avenida Pedro de C. Vandunem-Loy, Luanda, Angola",
+        "score": 1.0,
+        "normalized_address": "aaaaaaacdddddeeeegilllmnnnnnooopruuvvy"
+      },
+      {
+        "address": "21, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaaaabbddeeegiijlllnnoooorrrssuuv"
+      },
+      {
+        "address": "39, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaaaaddeegijllmnnnnoooorrrssttuuuu"
+      },
+      {
+        "address": "13A, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaaaaaddeegijllmnnnnoooorrrssttuuuu"
+      },
+      {
+        "address": "2727, Rua da Madalena do Mar, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaaaaaaddddeglllmmnnnoorruu"
+      },
+      {
+        "address": "42, Rua das Construções, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaaccddegllnnnooorrssstuuu"
+      },
+      {
+        "address": "21, Comandante Eurico, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaaccddeegillmnnnnooortuu"
+      },
+      {
+        "address": "Avenida Samora Machel, Luanda, 6212, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaaaaacddeeghilllmmnnnoorsuv"
+      },
+      {
+        "address": "8ª Esquadra da divisão do Rangel, Bairro ctt, rangel, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaaaaaaabcdddddeeggiiilllnnnooooqrrrrssttuuv"
+      },
+      {
+        "address": "1º Conservatório do Registo Civil, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaccddeeggiiiilllnnnooooooorrrssttuvv"
+      },
+      {
+        "address": "4ª Conservatória do Registo Civil de Luanda - Valódia, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaaaaaccddddeeeggiiiiillllnnnoooooorrrssttuvvv"
+      },
+      {
+        "address": "Comercial, Rua 1º de Agosto, Lubango, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaaabccdeegggilllmnnoooooorrstuu"
+      },
+      {
+        "address": "Comercial, Rua 10 de Dezembro, Lubango, Angola",
+        "score": 0.9,
+        "normalized_address": "aaaaabbccddeeeeggilllmmnnoooorrruuz"
+      }
+    ]
+  },
+  "generated_at": "2025-12-01 22:14:35",
+  "total_countries": 196,
+  "cached_countries": 5,
+  "failed_countries": [
+    "Afghanistan",
+    "Andorra"
+  ]
+}

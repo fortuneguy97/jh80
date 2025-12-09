@@ -1,0 +1,208 @@
+================================================================================
+TESTING 15 CZECHIA ADDRESSES
+================================================================================
+
+Testing Address 1: 8, Shahid Mazari Road, Kabul, 5000, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaabddfghhhiiiklmnnorrsstuz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari Road, Kabul, 5000, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: 8, جاده شهید مزاری, دشت برچی, ناحیه سیزدهم, کابل, کابل ښاروالۍ, ولایت كابل, 5000, افغانستان
+  → First result place_rank: 30
+  → Numbers in address: {'8', '5000'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 0.9
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 0.9)
+
+Testing Address 2: 8, Shahid Mazari Rd, Kabul, 5000, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabddfghhhiiiklmnnrrsstuz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari Rd, Kabul, 5000, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: 8, جاده شهید مزاری, دشت برچی, ناحیه سیزدهم, کابل, کابل ښاروالۍ, ولایت كابل, 5000, افغانستان
+  → First result place_rank: 30
+  → Numbers in address: {'8', '5000'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 0.9
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 0.9)
+
+Testing Address 3: 8, Shahid Mazari Street, Kabul, 5000, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabdeefghhhiiiklmnnrrssstttuz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari Street, Kabul, 5000, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 4: 8, Shahid Mazari St, Kabul, 5000, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabdfghhhiiiklmnnrsssttuz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari St, Kabul, 5000, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 5: 8, Shahid Mazari Avenue, Kabul, 5000, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaabdeefghhhiiiklmnnnrsstuuvz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari Avenue, Kabul, 5000, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 6: 8, Shahid Mazari Ave, Kabul, 5000, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaabdefghhhiiiklmnnrsstuvz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari Ave, Kabul, 5000, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 7: 8, Shahid Mazari Road, Kabul, 5000, Islamic Republic of Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaaabbccddeffghhhiiiiiiklllmmnnooprrrssstuuz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari Road, Kabul, 5000, Islamic Republic of Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 8: 8, جاده شهید مزاری, Kabul, 5000, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaabddfghhhhijklmnnrsstuyyz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, جاده شهید مزاری, Kabul, 5000, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: 8, جاده شهید مزاری, دشت برچی, ناحیه سیزدهم, کابل, کابل ښاروالۍ, ولایت كابل, 5000, افغانستان
+  → First result place_rank: 30
+  → Numbers in address: {'8', '5000'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 0.9
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 0.9)
+
+Testing Address 9: 8, Shahid Mazari Road, Kabul, 5000, Islamic State of Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaaaabcddeffghhhiiiiikllmmnnoorrsssstttuz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari Road, Kabul, 5000, Islamic State of Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 10: 8, Shahid Mazari Rd, Kabul, 5000, Islamic Republic of Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaabbccddeffghhhiiiiiiklllmmnnoprrrssstuuz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari Rd, Kabul, 5000, Islamic Republic of Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 11: 8, جاده شهید مزاری, Kabul, 5000, Islamic Republic of Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaabbccddeffghhhhiiiijklllmmnnoprrssstuuyyz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, جاده شهید مزاری, Kabul, 5000, Islamic Republic of Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+Testing Address 12: 8, Shahid Mazari Street, Kabul, 5000, Islamic State of Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaaabcdeeeffghhhiiiiikllmmnnorrssssstttttuz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: 8, Shahid Mazari Street, Kabul, 5000, Islamic State of Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 0
+  ✗ FAILED: No results found for address
+
+================================================================================
+SUMMARY
+================================================================================
+
+Total addresses: 1
+  ✅ Passed (score >= 0.9): 0
+  ✗ Failed (score < 0.9): 1
+  ⏱ Timeout: 0
+  ❌ Errors: 0
+
+Unique normalized addresses: 1
+Duplicate normalized addresses: 0
+
+✗ FAILED ADDRESSES:
+  12. 8, Shahid Mazari Street, Kabul, 5000, Islamic State of Afghanistan
+

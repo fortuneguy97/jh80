@@ -1,0 +1,434 @@
+{
+  "country": "United Kingdom",
+  "perfect_addresses": [
+    "25 Queen's Gate Mews, London, SW7 5QN, United Kingdom",
+    "9 Ennismore Mews, London, SW7 1AN, United Kingdom",
+    "7 Stanhope Mews East, London, SW7 5RB, United Kingdom",
+    "11 Princes Gate Mews, London, SW7 2PS, United Kingdom",
+    "2 Radnor Mews, London, W2 2SA, United Kingdom",
+    "29 Holland Park Mews, London, W11 3SU, United Kingdom",
+    "22 Montagu Mews West, London, W1H 2NY, United Kingdom",
+    "17 Circus Lane, Edinburgh, EH3 6SU, United Kingdom",
+    "8 Gloucester Lane, Edinburgh, EH3 6ED, United Kingdom",
+    "6 Dean Park Mews, Edinburgh, EH4 1EE, United Kingdom",
+    "9 Rothesay Mews, Edinburgh, EH3 7SE, United Kingdom",
+    "16 Park Street, Bristol, BS3 4JY, United Kingdom",
+    "33 Hill Street, Bristol, BS3 4TR, United Kingdom",
+    "6 Pylle Hill Crescent, Bristol, BS3 4TX, United Kingdom",
+    "14 Jericho Street, Oxford, OX2 6BU, United Kingdom"
+  ],
+  "count": 15,
+  "validator_score": 1.0,
+  "validator_result": {
+    "overall_score": 1.0,
+    "heuristic_perfect": true,
+    "api_result": "SUCCESS",
+    "region_matches": 15,
+    "total_addresses": 15,
+    "detailed_breakdown": {
+      "seed_addresses": [],
+      "variations_by_name": {},
+      "validation_results": {
+        "Test Identity": [
+          {
+            "address": "25 Queen's Gate Mews, London, SW7 5QN, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "9 Ennismore Mews, London, SW7 1AN, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "7 Stanhope Mews East, London, SW7 5RB, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "11 Princes Gate Mews, London, SW7 2PS, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "2 Radnor Mews, London, W2 2SA, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "29 Holland Park Mews, London, W11 3SU, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "22 Montagu Mews West, London, W1H 2NY, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "17 Circus Lane, Edinburgh, EH3 6SU, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "8 Gloucester Lane, Edinburgh, EH3 6ED, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "6 Dean Park Mews, Edinburgh, EH4 1EE, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "9 Rothesay Mews, Edinburgh, EH3 7SE, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "16 Park Street, Bristol, BS3 4JY, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "33 Hill Street, Bristol, BS3 4TR, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "6 Pylle Hill Crescent, Bristol, BS3 4TX, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          },
+          {
+            "address": "14 Jericho Street, Oxford, OX2 6BU, United Kingdom",
+            "seed_address": "United Kingdom",
+            "looks_like_address": true,
+            "region_match": true,
+            "passed_validation": true,
+            "status": "PASSED"
+          }
+        ]
+      },
+      "api_validation": {
+        "api_result": "SUCCESS",
+        "total_eligible_addresses": 15,
+        "api_attempts": [
+          {
+            "address": "14 Jericho Street, Oxford, OX2 6BU, United Kingdom",
+            "api": "nominatim",
+            "result": 1.0,
+            "score_details": {
+              "score": 1.0,
+              "areas": [
+                76.26318886834393
+              ],
+              "min_area": 76.26318886834393,
+              "num_results": 1,
+              "areas_data": [
+                {
+                  "south": 51.7590547,
+                  "north": 51.7591547,
+                  "west": -1.2683386,
+                  "east": -1.2682386,
+                  "width_m": 6.870557555478581,
+                  "height_m": 11.100000000368482,
+                  "area_m2": 76.26318886834393,
+                  "result": {
+                    "place_id": 33319975,
+                    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+                    "osm_type": "way",
+                    "osm_id": 1303971215,
+                    "lat": "51.7591047",
+                    "lon": "-1.2682886",
+                    "class": "place",
+                    "type": "house",
+                    "place_rank": 30,
+                    "importance": 9.99999999995449e-06,
+                    "addresstype": "place",
+                    "name": "",
+                    "display_name": "14, Jericho Street, Jericho, Oxford, Oxfordshire, England, OX2 6DG, United Kingdom",
+                    "boundingbox": [
+                      "51.7590547",
+                      "51.7591547",
+                      "-1.2683386",
+                      "-1.2682386"
+                    ]
+                  }
+                }
+              ]
+            },
+            "attempt": 1
+          },
+          {
+            "address": "8 Gloucester Lane, Edinburgh, EH3 6ED, United Kingdom",
+            "api": "nominatim",
+            "result": 1.0,
+            "score_details": {
+              "score": 1.0,
+              "areas": [
+                68.9775213041172,
+                68.97748263809667,
+                68.977560143411,
+                12105.41888578263,
+                573.2251608284366
+              ],
+              "min_area": 68.97748263809667,
+              "num_results": 5,
+              "areas_data": [
+                {
+                  "south": 55.9554215,
+                  "north": 55.9555215,
+                  "west": -3.2068804,
+                  "east": -3.2067804,
+                  "width_m": 6.214191108272737,
+                  "height_m": 11.100000000368482,
+                  "area_m2": 68.9775213041172,
+                  "result": {
+                    "place_id": 254372164,
+                    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+                    "osm_type": "node",
+                    "osm_id": 2860869230,
+                    "lat": "55.9554715",
+                    "lon": "-3.2068304",
+                    "class": "place",
+                    "type": "house",
+                    "place_rank": 30,
+                    "importance": 7.767071030742378e-05,
+                    "addresstype": "place",
+                    "name": "",
+                    "display_name": "8B, Gloucester Lane, Silvermills, New Town/Broughton, City of Edinburgh, Alba / Scotland, EH3 6ED, United Kingdom",
+                    "boundingbox": [
+                      "55.9554215",
+                      "55.9555215",
+                      "-3.2068804",
+                      "-3.2067804"
+                    ]
+                  }
+                },
+                {
+                  "south": 55.9554432,
+                  "north": 55.9555432,
+                  "west": -3.2068976,
+                  "east": -3.2067976,
+                  "width_m": 6.214187624847465,
+                  "height_m": 11.100000000368482,
+                  "area_m2": 68.97748263809667,
+                  "result": {
+                    "place_id": 254398536,
+                    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+                    "osm_type": "node",
+                    "osm_id": 2860869231,
+                    "lat": "55.9554932",
+                    "lon": "-3.2068476",
+                    "class": "place",
+                    "type": "house",
+                    "place_rank": 30,
+                    "importance": 7.767071030742378e-05,
+                    "addresstype": "place",
+                    "name": "",
+                    "display_name": "8C, Gloucester Lane, Silvermills, New Town/Broughton, City of Edinburgh, Alba / Scotland, EH3 6ED, United Kingdom",
+                    "boundingbox": [
+                      "55.9554432",
+                      "55.9555432",
+                      "-3.2068976",
+                      "-3.2067976"
+                    ]
+                  }
+                },
+                {
+                  "south": 55.9553997,
+                  "north": 55.9554997,
+                  "west": -3.2068631,
+                  "east": -3.2067631,
+                  "width_m": 6.21419460774976,
+                  "height_m": 11.09999999957978,
+                  "area_m2": 68.977560143411,
+                  "result": {
+                    "place_id": 254417607,
+                    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+                    "osm_type": "node",
+                    "osm_id": 2860869229,
+                    "lat": "55.9554497",
+                    "lon": "-3.2068131",
+                    "class": "place",
+                    "type": "house",
+                    "place_rank": 30,
+                    "importance": 7.767071030742378e-05,
+                    "addresstype": "place",
+                    "name": "",
+                    "display_name": "8A, Gloucester Lane, Silvermills, New Town/Broughton, City of Edinburgh, Alba / Scotland, EH3 6ED, United Kingdom",
+                    "boundingbox": [
+                      "55.9553997",
+                      "55.9554997",
+                      "-3.2068631",
+                      "-3.2067631"
+                    ]
+                  }
+                },
+                {
+                  "south": 55.9549697,
+                  "north": 55.9564679,
+                  "west": -3.2075431,
+                  "east": -3.2063717,
+                  "width_m": 72.7925696167527,
+                  "height_m": 166.30020000003753,
+                  "area_m2": 12105.41888578263,
+                  "result": {
+                    "place_id": 254566519,
+                    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+                    "osm_type": "way",
+                    "osm_id": 4915130,
+                    "lat": "55.9557129",
+                    "lon": "-3.2069652",
+                    "class": "highway",
+                    "type": "residential",
+                    "place_rank": 26,
+                    "importance": 0.05341100404364077,
+                    "addresstype": "road",
+                    "name": "Gloucester Lane",
+                    "display_name": "Gloucester Lane, Silvermills, New Town/Broughton, City of Edinburgh, Alba / Scotland, EH3 6ED, United Kingdom",
+                    "boundingbox": [
+                      "55.9549697",
+                      "55.9564679",
+                      "-3.2075431",
+                      "-3.2063717"
+                    ]
+                  }
+                },
+                {
+                  "south": 55.9546471,
+                  "north": 55.9549697,
+                  "west": -3.2063717,
+                  "east": -3.2061141,
+                  "width_m": 16.00803049641289,
+                  "height_m": 35.808599999661794,
+                  "area_m2": 573.2251608284366,
+                  "result": {
+                    "place_id": 254808476,
+                    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+                    "osm_type": "way",
+                    "osm_id": 1313298794,
+                    "lat": "55.9548084",
+                    "lon": "-3.2062429",
+                    "class": "highway",
+                    "type": "residential",
+                    "place_rank": 26,
+                    "importance": 0.05341100404364077,
+                    "addresstype": "road",
+                    "name": "Gloucester Lane",
+                    "display_name": "Gloucester Lane, Silvermills, New Town/Broughton, City of Edinburgh, Alba / Scotland, EH3 6EX, United Kingdom",
+                    "boundingbox": [
+                      "55.9546471",
+                      "55.9549697",
+                      "-3.2063717",
+                      "-3.2061141"
+                    ]
+                  }
+                }
+              ]
+            },
+            "attempt": 2
+          },
+          {
+            "address": "29 Holland Park Mews, London, W11 3SU, United Kingdom",
+            "api": "nominatim",
+            "result": 1.0,
+            "score_details": {
+              "score": 1.0,
+              "areas": [
+                76.69091123151371
+              ],
+              "min_area": 76.69091123151371,
+              "num_results": 1,
+              "areas_data": [
+                {
+                  "south": 51.5053672,
+                  "north": 51.5054672,
+                  "west": -0.2075756,
+                  "east": -0.2074756,
+                  "width_m": 6.909091102199735,
+                  "height_m": 11.09999999957978,
+                  "area_m2": 76.69091123151371,
+                  "result": {
+                    "place_id": 259524162,
+                    "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+                    "osm_type": "node",
+                    "osm_id": 7424121815,
+                    "lat": "51.5054172",
+                    "lon": "-0.2075256",
+                    "class": "place",
+                    "type": "house",
+                    "place_rank": 30,
+                    "importance": 9.307927061870783e-05,
+                    "addresstype": "place",
+                    "name": "",
+                    "display_name": "29, Holland Park Mews, Notting Hill, Royal Borough of Kensington and Chelsea, Greater London, England, W11 3SS, United Kingdom",
+                    "boundingbox": [
+                      "51.5053672",
+                      "51.5054672",
+                      "-0.2075756",
+                      "-0.2074756"
+                    ]
+                  }
+                }
+              ]
+            },
+            "attempt": 3
+          }
+        ],
+        "nominatim_successful_calls": 3,
+        "nominatim_timeout_calls": 0,
+        "nominatim_failed_calls": 0,
+        "total_successful_calls": 3,
+        "total_timeout_calls": 0,
+        "total_failed_calls": 0,
+        "total_calls": 3
+      }
+    }
+  },
+  "timestamp": "2025-11-25T01:10:06.517154",
+  "log_file": "logs/address_generation_United_Kingdom_20251125_010744.log"
+}

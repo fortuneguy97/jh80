@@ -1,0 +1,358 @@
+{
+  "addresses": {
+    "Afghanistan": [],
+    "Albania": [
+      {
+        "address": "113, Rruga Mezi i Urave, Ura Vajgurore, 5007, Albania",
+        "score": 1.0,
+        "normalized_address": "113 rruga mezi i urave ura vajgurore 5007 albania"
+      },
+      {
+        "address": "111, Rruga Mezi i Urave, Ura Vajgurore, 5007, Albania",
+        "score": 0.9,
+        "normalized_address": "111 rruga mezi i urave ura vajgurore 5007 albania"
+      },
+      {
+        "address": "123, Rruga Mezi i Urave, Ura Vajgurore, 5007, Albania",
+        "score": 0.9,
+        "normalized_address": "123 rruga mezi i urave ura vajgurore 5007 albania"
+      },
+      {
+        "address": "121, Rruga Mezi i Urave, Ura Vajgurore, 5007, Albania",
+        "score": 0.9,
+        "normalized_address": "121 rruga mezi i urave ura vajgurore 5007 albania"
+      },
+      {
+        "address": "105, Rruga Mezi i Urave, Ura Vajgurore, 5007, Albania",
+        "score": 0.9,
+        "normalized_address": "105 rruga mezi i urave ura vajgurore 5007 albania"
+      },
+      {
+        "address": "125, Rruga Mezi i Urave, Ura Vajgurore, 5007, Albania",
+        "score": 0.9,
+        "normalized_address": "125 rruga mezi i urave ura vajgurore 5007 albania"
+      },
+      {
+        "address": "115, Rruga Mezi i Urave, Ura Vajgurore, 5007, Albania",
+        "score": 0.9,
+        "normalized_address": "115 rruga mezi i urave ura vajgurore 5007 albania"
+      },
+      {
+        "address": "117, Rruga Mezi i Urave, Ura Vajgurore, 5007, Albania",
+        "score": 0.9,
+        "normalized_address": "117 rruga mezi i urave ura vajgurore 5007 albania"
+      },
+      {
+        "address": "Rruga Antipatrea, Berat, 5001, Albania",
+        "score": 1.0,
+        "normalized_address": "rruga antipatrea berat 5001 albania"
+      },
+      {
+        "address": "Kisha e Shën Todrit, Berat, 5001, Albania",
+        "score": 0.9,
+        "normalized_address": "kisha e shën todrit berat 5001 albania"
+      },
+      {
+        "address": "Xhamia e Plumbit, Berat, 5001, Albania",
+        "score": 0.9,
+        "normalized_address": "xhamia e plumbit berat 5001 albania"
+      },
+      {
+        "address": "Katedralja Ortodokse Shën Dhimitri, Berat, 5001, Albania",
+        "score": 0.9,
+        "normalized_address": "katedralja ortodokse shën dhimitri berat 5001 albania"
+      },
+      {
+        "address": "BASHKIA BERAT, BASHKIA BERAT, 5001, Albania",
+        "score": 0.9,
+        "normalized_address": "bashkia berat bashkia berat 5001 albania"
+      },
+      {
+        "address": "Guesthouse Kris, Berat, 5001, Albania",
+        "score": 1.0,
+        "normalized_address": "guesthouse kris berat 5001 albania"
+      },
+      {
+        "address": "34, Rruga Kongresi i Përmetit, Korçë, 7001, Albania",
+        "score": 1.0,
+        "normalized_address": "34 rruga kongresi i përmetit korçë 7001 albania"
+      }
+    ],
+    "Algeria": [
+      {
+        "address": "8 ème Sûreté urbaine, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "8 ème sûreté urbaine oran 31000 algeria"
+      },
+      {
+        "address": "Tabac Journeaux, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "tabac journeaux oran 31000 algeria"
+      },
+      {
+        "address": "Supermarché khawadja, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "supermarché khawadja oran 31000 algeria"
+      },
+      {
+        "address": "Mosquée Salman el Farissi, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "mosquée salman el farissi oran 31000 algeria"
+      },
+      {
+        "address": "Hôtel des finances, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "hôtel des finances oran 31000 algeria"
+      },
+      {
+        "address": "Lingerie Giovanni, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "lingerie giovanni oran 31000 algeria"
+      },
+      {
+        "address": "GSNautomotive, Bir El Djir, 31028, Algeria",
+        "score": 0.9,
+        "normalized_address": "gsnautomotive bir el djir 31028 algeria"
+      },
+      {
+        "address": "Cabinet President d'APC, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "cabinet president d'apc oran 31000 algeria"
+      },
+      {
+        "address": "Clinique El Abed, Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "clinique el abed oran 31000 algeria"
+      },
+      {
+        "address": "SARL Ops (La voix de l'oranie), Oran, 31000, Algeria",
+        "score": 0.9,
+        "normalized_address": "sarl ops (la voix de l'oranie) oran 31000 algeria"
+      },
+      {
+        "address": "Caisse Nationale des Assurances Sociales des Travailleurs Salariés, Oran, 31000, Algeria",
+        "score": 1.0,
+        "normalized_address": "caisse nationale des assurances sociales des travailleurs salariés oran 31000 algeria"
+      },
+      {
+        "address": "85, Aboudi Ahmed, Didouche Mourad, 25024, Algeria",
+        "score": 0.9,
+        "normalized_address": "85 aboudi ahmed didouche mourad 25024 algeria"
+      },
+      {
+        "address": "98, Aboudi Ahmed, Didouche Mourad, 25024, Algeria",
+        "score": 0.9,
+        "normalized_address": "98 aboudi ahmed didouche mourad 25024 algeria"
+      },
+      {
+        "address": "78, Aboudi Ahmed, Didouche Mourad, 25024, Algeria",
+        "score": 0.9,
+        "normalized_address": "78 aboudi ahmed didouche mourad 25024 algeria"
+      },
+      {
+        "address": "79, Aboudi Ahmed, Didouche Mourad, 25024, Algeria",
+        "score": 0.9,
+        "normalized_address": "79 aboudi ahmed didouche mourad 25024 algeria"
+      }
+    ],
+    "Andorra": [],
+    "Angola": [
+      {
+        "address": "233, Largo Serpa Pinto, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "233 largo serpa pinto luanda angola"
+      },
+      {
+        "address": "19a, Avenida Pedro de C. Vandunem-Loy, Luanda, Angola",
+        "score": 1.0,
+        "normalized_address": "19a avenida pedro de c. vandunem loy luanda angola"
+      },
+      {
+        "address": "1, Avenida Pedro de C. Vandunem-Loy, Luanda, Angola",
+        "score": 1.0,
+        "normalized_address": "1 avenida pedro de c. vandunem loy luanda angola"
+      },
+      {
+        "address": "21, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "21 rua de josé de oliveira barbosa luanda angola"
+      },
+      {
+        "address": "18, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "18 rua de josé de oliveira barbosa luanda angola"
+      },
+      {
+        "address": "20, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "20 rua de josé de oliveira barbosa luanda angola"
+      },
+      {
+        "address": "30, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "30 rua de josé de oliveira barbosa luanda angola"
+      },
+      {
+        "address": "39, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "39 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "33, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "33 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "35, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "35 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "29, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "29 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "27, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "27 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "21, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "21 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "23, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "23 rua doutor josé maria antunes luanda angola"
+      },
+      {
+        "address": "19, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "normalized_address": "19 rua doutor josé maria antunes luanda angola"
+      }
+    ],
+    "Argentina": [],
+    "Armenia": [],
+    "Aruba": [],
+    "Australia": [],
+    "Austria": [],
+    "Azerbaijan": [],
+    "Bahamas": [],
+    "Bahrain": [],
+    "Bangladesh": [],
+    "Belarus": [],
+    "Belgium": [],
+    "Belize": [],
+    "Benin": [],
+    "Bhutan": [],
+    "Bolivia": [],
+    "Bonaire, Saint Eustatius and Saba": [],
+    "Bosnia and Herzegovina": [],
+    "Botswana": [],
+    "Brazil": [],
+    "British Virgin Islands": [],
+    "Brunei": [],
+    "Bulgaria": [],
+    "Burkina Faso": [],
+    "Burundi": [],
+    "Cabo Verde": [],
+    "Cambodia": [],
+    "Cameroon": [],
+    "Canada": [],
+    "Cayman Islands": [],
+    "Central African Republic": [],
+    "Chad": [],
+    "Chile": [],
+    "China": [],
+    "Colombia": [],
+    "Comoros": [],
+    "Costa Rica": [],
+    "Croatia": [],
+    "Cuba": [],
+    "Curacao": [],
+    "Cyprus": [],
+    "Czechia": [],
+    "Democratic Republic of the Congo": [],
+    "Denmark": [],
+    "Djibouti": [],
+    "Dominican Republic": [],
+    "Ecuador": [],
+    "Egypt": [],
+    "El Salvador": [],
+    "Equatorial Guinea": [],
+    "Eritrea": [],
+    "Estonia": [],
+    "Eswatini": [],
+    "Ethiopia": [],
+    "Fiji": [],
+    "Finland": [],
+    "France": [],
+    "French Guiana": []
+  },
+  "generated_at": "2025-12-02 13:23:43",
+  "total_countries": 196,
+  "cached_countries": 62,
+  "failed_countries": [
+    "Afghanistan",
+    "Andorra",
+    "Argentina",
+    "Armenia",
+    "Aruba",
+    "Australia",
+    "Austria",
+    "Azerbaijan",
+    "Bahamas",
+    "Bahrain",
+    "Bangladesh",
+    "Belarus",
+    "Belgium",
+    "Belize",
+    "Benin",
+    "Bhutan",
+    "Bolivia",
+    "Bonaire, Saint Eustatius and Saba",
+    "Bosnia and Herzegovina",
+    "Botswana",
+    "Brazil",
+    "British Virgin Islands",
+    "Brunei",
+    "Bulgaria",
+    "Burkina Faso",
+    "Burundi",
+    "Cabo Verde",
+    "Cambodia",
+    "Cameroon",
+    "Canada",
+    "Cayman Islands",
+    "Central African Republic",
+    "Chad",
+    "Chile",
+    "China",
+    "Colombia",
+    "Comoros",
+    "Costa Rica",
+    "Croatia",
+    "Cuba",
+    "Curacao",
+    "Cyprus",
+    "Czechia",
+    "Democratic Republic of the Congo",
+    "Denmark",
+    "Djibouti",
+    "Dominican Republic",
+    "Ecuador",
+    "Egypt",
+    "El Salvador",
+    "Equatorial Guinea",
+    "Eritrea",
+    "Estonia",
+    "Eswatini",
+    "Ethiopia",
+    "Fiji",
+    "Finland",
+    "France",
+    "French Guiana"
+  ]
+}

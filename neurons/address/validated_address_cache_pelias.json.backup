@@ -1,0 +1,13 @@
+{
+  "addresses": {
+    "Afghanistan": [
+      "8, جاده شهید مزاری, kabul, 5000, Afghanistan"
+    ]
+  },
+  "generated_at": "2025-12-01 14:54:42",
+  "total_countries": 196,
+  "cached_countries": 1,
+  "failed_countries": [
+    "Afghanistan"
+  ]
+}

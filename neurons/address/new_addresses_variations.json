@@ -1,0 +1,313 @@
+{
+  "description": "Newly created address variations from cache addresses",
+  "created_at": "2024-12-19",
+  "source": "Generated from addresses in normalized_address_cache.json",
+  "addresses_by_country": {
+    "Czechia": [
+      {
+        "address": "875/6a, Heršpická, Štýřice, Brno, okres Brno-město, Jihomoravský kraj, Jihovýchod, 639 00, Česko",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabbccccdeeeeehhhhiiiijjjkkkkkmmnnoooooooooprrrrrrrssssssttvvyyy",
+        "source_city": "Brno",
+        "referenced_from": "875/6a, Heršpická, Brno, 639 00, Czechia",
+        "created_from": "First Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "875/6a Heršpická, Brno, Štýřice, okres Brno-město, Jihomoravský kraj, 639 00, Česko",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabbccceeeeehhiiijjkkkkkmmnnoooooooprrrrrrrssssssttvyy",
+        "source_city": "Brno",
+        "referenced_from": "875/6a, Heršpická, Brno, 639 00, Czechia",
+        "created_from": "First Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "174, náměstí Míru, Zlín, 760 01, Central Moravia, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaccceeehiiiiillmmmnnnorrrsttuvzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "174, náměstí Míru, Zlín, 760 01, Zlín Region, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aacceeeghiiiiilmmnnnorrstuzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "174, náměstí Míru, Zlín, 760 01, Moravia, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaacceehiiiiilmmmnnorrstuvzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "Tam Tam restaurant, 174, náměstí Míru, Zlín, 760 01, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaacceeehiiiilmmmnnnrrrssttttuuzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "Tam Tam restaurant, 174, náměstí Míru, Zlín, 760 01, Central Moravia, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaccceeeehiiiiillmmmmnnnnorrrrrsstttttuuvzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "Tam Tam restaurant, 174, náměstí Míru, Zlín, 760 01, Moravia, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaacceeehiiiiilmmmmnnnorrrrssttttuuvzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "Tam Tam restaurant, 174, náměstí Míru, Zlín, 760 01, Zlín Region, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaacceeeeghiiiiilmmmnnnnorrrrssttttuuzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "Starbucks, 174, náměstí Míru, Zlín, 760 01, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabccceehiiiiklmmnnrrsssttuuzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "Starbucks, 174, náměstí Míru, Zlín, 760 01, Central Moravia, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabcccceeehiiiiikllmmmnnnorrrrssstttuuvzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "Starbucks, 174, náměstí Míru, Zlín, 760 01, Moravia, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabccceehiiiiiklmmmnnorrrsssttuuvzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      },
+      {
+        "address": "Starbucks, 174, náměstí Míru, Zlín, 760 01, Zlín Region, Czechia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabccceeeghiiiiiklmmnnnorrrsssttuuzz",
+        "source_city": "Zlín",
+        "referenced_from": "174, náměstí Míru, Zlín, 760 01, Czechia",
+        "created_from": "Second Czechia address in cache (variation)",
+        "country": "Czechia"
+      }
+    ],
+    "Afghanistan": [
+      {
+        "address": "8, Shahid Mazari Road, Kabul, 5000, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabddfghhhiiiklmnnorrsstuz",
+        "source_city": "Kabul",
+        "referenced_from": "8, جاده شهید مزاری, kabul, 5000, Afghanistan",
+        "created_from": "First Afghanistan address in cache (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "8, Shahid Mazari Rd, Kabul, 5000, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabddfghhhiiiklmnnrrsstuz",
+        "source_city": "Kabul",
+        "referenced_from": "8, جاده شهید مزاری, kabul, 5000, Afghanistan",
+        "created_from": "First Afghanistan address in cache (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Five Star Gas Station, Kabul District, Kabul, 1006, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabcdeffgghiiiiiklnnnorrsssssttttttuv",
+        "source_city": "Kabul",
+        "referenced_from": "five star gas station, kabul, 1006, Afghanistan",
+        "created_from": "Third Afghanistan address in cache (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Five Star Gas Station, Kabul Province, Kabul, 1006, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabceeffgghiiiiklnnnnooprrssssttttuvv",
+        "source_city": "Kabul",
+        "referenced_from": "five star gas station, kabul, 1006, Afghanistan",
+        "created_from": "Third Afghanistan address in cache (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Five Star Gas Station, کوچه لیسه موزیک, 3rd District, Kabul, 1006, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabccddeffgghhhhhhiiiiikkkllmnnnorrrssssssttttttuvwwyyz",
+        "source_city": "Kabul",
+        "referenced_from": "five star gas station, kabul, 1006, Afghanistan",
+        "created_from": "Third Afghanistan address in cache (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, 3rd District Kabul, 1006, Afghanistan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbcdddefghhiiiklnnoqrrrrssstttu",
+        "source_city": "Kabul",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Second Afghanistan address in cache (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, Kabul District Kabul, 1006, Afghanistan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbcddefghhiiiklnnoqrrrssstttu",
+        "source_city": "Kabul",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Second Afghanistan address in cache (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, Kabul Province Kabul, 1006, Afghanistan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbcdeefghhiiklnnnoopqrrrsstuv",
+        "source_city": "Kabul",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Second Afghanistan address in cache (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, ناحیه سوم کابل, 1004, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabbdefghhhhklmnnnoqrrssstwy",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, Nahri Darsan کابل, 1004, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbddefghhhiklnnnnoqrrrrssst",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, کابل ښاروالۍ کابل, 1004, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabbdefghhkllnnoqrrrssstwy",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, ولایت كابل کابل, 1004, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabbbdefghhkklllnnoqrrssttwy",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, ناحیه سوم کابل, 1004, Nahri Darsan, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbddefghhhhhiklmnnnnnoqrrrrsssstwy",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, ناحیه سوم کابل, 1004, کابل ښاروالۍ, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabbdefghhhhkllmnnnoqrrrsssstwwyy",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, ناحیه سوم کابل, 1004, ولایت كابل, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabbbdefghhhhkklllmnnnoqrrsssttwwyy",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, Nahri Darsan کابل, 1004, کابل ښاروالۍ, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbddefghhhikllnnnnoqrrrrrsssstwy",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, Nahri Darsan کابل, 1004, ولایت كابل, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbbddefghhhikklllnnnnoqrrrrsssttwy",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Seh Aqrab Road, کابل ښاروالۍ کابل, 1004, ولایت كابل, افغانستان",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabbbdefghhkkllllnnoqrrrsssttwwyy",
+        "source_city": "کابل",
+        "referenced_from": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "created_from": "Generated from Afghanistan cache address (variation)",
+        "country": "Afghanistan"
+      }
+    ],
+    "Andorra": [],
+    "Armenia": [],
+    "Bahamas": [],
+    "Benin": [
+      {
+        "address": "Route de la Préfecture, Abomey, 2199, Bénin",
+        "score": 0.9,
+        "cheat_normalized_address": "aabbcdeeeeeeefilmnnooprrrttuuy",
+        "source_city": "Abomey",
+        "referenced_from": "BP 2199, Centre de formation professionelle d'Abomey, ABOMEY, 2199, Benin",
+        "created_from": "Generated from Benin cache address (variation)",
+        "country": "Benin"
+      },
+      {
+        "address": "Route de la Préfecture, Zou Abomey, 2199, Bénin",
+        "score": 0.9,
+        "cheat_normalized_address": "aabbcdeeeeeeefilmnnoooprrrttuuuyz",
+        "source_city": "Abomey",
+        "referenced_from": "BP 2199, Centre de formation professionelle d'Abomey, ABOMEY, 2199, Benin",
+        "created_from": "Generated from Benin cache address (variation)",
+        "country": "Benin"
+      }
+    ]
+  }
+}

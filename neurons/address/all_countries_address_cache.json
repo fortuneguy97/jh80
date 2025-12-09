@@ -1,0 +1,337 @@
+{
+  "countries": {
+    "Afghanistan": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T01:29:22.488252"
+    },
+    "Albania": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T01:33:15.410600"
+    },
+    "Algeria": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T01:37:14.968172"
+    },
+    "Andorra": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T01:41:16.730895"
+    },
+    "Angola": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T01:45:16.222318"
+    },
+    "Argentina": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T01:49:10.557616"
+    },
+    "Armenia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T01:53:06.291098"
+    },
+    "Aruba": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T01:57:26.515518"
+    },
+    "Australia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T02:00:54.216504"
+    },
+    "Austria": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T02:04:42.067201"
+    },
+    "Azerbaijan": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T02:08:35.688695"
+    },
+    "Bahamas": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T02:12:43.552707"
+    },
+    "Bahrain": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T02:16:19.457355"
+    },
+    "Bangladesh": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T02:20:00.588755"
+    },
+    "Belarus": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T02:23:36.321039"
+    },
+    "Belgium": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T02:27:23.568068"
+    },
+    "Belize": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T02:46:24.800890"
+    },
+    "Benin": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T02:46:24.801559"
+    },
+    "Bhutan": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T03:48:04.042245"
+    },
+    "Bolivia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T04:32:17.709419"
+    },
+    "Bonaire, Saint Eustatius and Saba": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T05:33:17.654118"
+    },
+    "Bosnia and Herzegovina": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T06:34:17.653407"
+    },
+    "Botswana": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T07:35:17.635570"
+    },
+    "Brazil": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T08:36:17.647560"
+    },
+    "British Virgin Islands": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T09:37:17.707241"
+    },
+    "Brunei": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T10:19:45.255284"
+    },
+    "Bulgaria": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T11:24:20.068109"
+    },
+    "Burkina Faso": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T11:24:20.068499"
+    },
+    "Burundi": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T11:24:20.068659"
+    },
+    "Cabo Verde": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T12:27:28.862143"
+    },
+    "Cambodia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T12:31:08.214690"
+    },
+    "Cameroon": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T12:35:01.262650"
+    },
+    "Canada": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T13:03:43.595888"
+    },
+    "Cayman Islands": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T13:58:04.486775"
+    },
+    "Central African Republic": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T13:58:04.488405"
+    },
+    "Chad": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T13:58:04.489235"
+    },
+    "Chile": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T14:58:10.444969"
+    },
+    "China": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T15:31:37.738918"
+    },
+    "Colombia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T15:35:41.062917"
+    },
+    "Comoros": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T15:48:37.987573"
+    },
+    "Costa Rica": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T15:52:40.001812"
+    },
+    "Crimea": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T15:56:45.194748"
+    },
+    "Croatia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:00:49.947864"
+    },
+    "Cuba": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:04:38.905201"
+    },
+    "Curacao": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:20:26.529495"
+    },
+    "Cyprus": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:24:46.850092"
+    },
+    "Czechia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:29:14.483258"
+    },
+    "Democratic Republic of the Congo": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T16:29:14.483662"
+    },
+    "Denmark": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:33:21.840231"
+    },
+    "Djibouti": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:38:33.974956"
+    },
+    "Dominican Republic": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:42:29.248747"
+    },
+    "Donetsk": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:46:18.060153"
+    },
+    "Ecuador": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:50:24.140367"
+    },
+    "Egypt": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:54:32.263051"
+    },
+    "El Salvador": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T16:58:30.706741"
+    },
+    "Equatorial Guinea": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:02:25.895999"
+    },
+    "Eritrea": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T17:02:25.897185"
+    },
+    "Estonia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:06:15.317482"
+    },
+    "Eswatini": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:10:02.343612"
+    },
+    "Ethiopia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:14:08.472883"
+    },
+    "Fiji": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:17:59.695534"
+    },
+    "Finland": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:21:54.535526"
+    },
+    "France": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:26:06.806768"
+    },
+    "French Guiana": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:30:22.535395"
+    },
+    "French Polynesia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:34:33.442690"
+    },
+    "Gabon": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:38:39.254587"
+    },
+    "Gambia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:42:28.317467"
+    },
+    "Georgia": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T17:46:10.715657"
+    },
+    "Germany": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T18:10:26.366849"
+    },
+    "Ghana": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T18:41:10.487625"
+    },
+    "Greece": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T18:45:47.924417"
+    },
+    "Guadeloupe": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T18:49:49.238801"
+    },
+    "Guam": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T18:53:08.366041"
+    },
+    "Guatemala": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T18:56:53.612749"
+    },
+    "Guinea": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T18:56:53.613299"
+    },
+    "Guinea-Bissau": {
+      "perfect_addresses": [],
+      "skipped": true,
+      "skip_reason": "Weak OSM house-number coverage",
+      "last_updated": "2025-11-25T18:56:53.613571"
+    },
+    "Guyana": {
+      "perfect_addresses": [],
+      "last_updated": "2025-11-25T19:00:37.326504"
+    }
+  },
+  "metadata": {
+    "created": "2025-11-25T01:22:39.823661",
+    "target_per_country": 15,
+    "last_updated": "2025-11-25T19:02:19.703000"
+  }
+}
