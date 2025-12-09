@@ -204,12 +204,11 @@ class Miner(BaseMinerNeuron):
 
     async def forward(self, synapse: IdentitySynapse) -> IdentitySynapse:
         """
-        Process identity variation request using miner1's complete logic.
+        Process identity variation request with intelligent routing.
         
-        Uses variation_generator_clean.py for maximum TAO earnings:
-        - Name variations (Ollama LLM + rule-based)
-        - DOB variations (rule-based)
-        - Address variations (real cities + streets)
+        Routing priority:
+        1. Ollama generator (if Ollama is available) - optimized prompts
+        2. Fallback to variation_generator_clean.py - rule-based + basic LLM
         
         Args:
             synapse: The IdentitySynapse containing identities and query template
@@ -221,7 +220,6 @@ class Miner(BaseMinerNeuron):
         run_id = int(time.time())
         bt.logging.info(f"=" * 80)
         bt.logging.info(f"Starting run {run_id} for {len(synapse.identity)} identities")
-        bt.logging.info(f"Using miner1 logic with Ollama (model: {self.model_name})")
         bt.logging.info(f"=" * 80)
         
         # Get timeout from synapse (default to 120s if not specified)
@@ -229,25 +227,34 @@ class Miner(BaseMinerNeuron):
         bt.logging.info(f"Request timeout: {timeout:.1f}s for {len(synapse.identity)} identities")
         start_time = time.time()
         
-        # Import miner1's variation generator (uses Ollama)
+        # Import path setup
         import sys
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         
         try:
-            # Import the clean generator from miner1
-            from variation_generator_clean import generate_variations
+            # Check if Ollama is available and working
+            try:
+                import ollama
+                # Quick test to see if Ollama is running
+                ollama.list()
+                ollama_available = True
+                bt.logging.info("✓ Ollama is available and running")
+            except Exception as e:
+                ollama_available = False
+                bt.logging.warning(f"⚠️  Ollama not available: {e}")
             
-            bt.logging.info("✓ Loaded variation_generator_clean.py (miner1 logic)")
-            
-            # Generate variations using miner1's logic
-            # This handles:
-            # - Query template parsing
-            # - Name variations (Ollama + rules)
-            # - DOB variations
-            # - Address variations (real cities)
-            # - Rule compliance
-            # - Phonetic/orthographic similarity
-            variations = generate_variations(synapse)
+            # Route to appropriate generator
+            if ollama_available:
+                bt.logging.info("🚀 Routing request to Ollama generator for maximum scoring")
+                from ollama_generator import generate_variations_with_ollama
+                variations = generate_variations_with_ollama(
+                    synapse,
+                    ollama_model=self.model_name
+                )
+            else:
+                bt.logging.info("📋 Routing request to variation_generator_clean.py (fallback)")
+                from variation_generator_clean import generate_variations as generate_variations_clean
+                variations = generate_variations_clean(synapse)
             
             # Set variations in synapse
             synapse.variations = variations
@@ -270,11 +277,10 @@ class Miner(BaseMinerNeuron):
                     bt.logging.info(f"  {i}. Name: {var[0]}, DOB: {var[1]}, Address: {var[2][:50]}...")
             
         except ImportError as e:
-            bt.logging.error(f"✗ Failed to import variation_generator_clean.py: {e}")
-            bt.logging.error(f"  Make sure variation_generator_clean.py is in {os.path.dirname(os.path.abspath(__file__))}")
-            bt.logging.error(f"  Falling back to simple generator...")
+            bt.logging.error(f"✗ Failed to import generator: {e}")
+            bt.logging.error(f"  Falling back to basic generator...")
             
-            # Fallback to simple generator
+            # Final fallback to simple generator
             from variation_generator import VariationGenerator
             generator = VariationGenerator(model_name=self.model_name)
             
