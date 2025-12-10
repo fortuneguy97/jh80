@@ -825,6 +825,6 @@ Remember: Only provide the name variations in a clean, comma-separated format.
 # This is the main function, which runs the miner.
 if __name__ == "__main__":
     with Miner() as miner:
-        # while True:
-        #     bt.logging.info(f"----------------------------------Name Variation Miner running... {time.time()}")
-        #     time.sleep(30)
+        while True:
+            bt.logging.info(f"----------------------------------Name Variation Miner running... {time.time()}")
+            time.sleep(60)
