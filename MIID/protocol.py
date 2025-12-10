@@ -38,7 +38,7 @@ from typing_extensions import TypedDict
 
 # ---- validator ---
 # Example usage:
-#   dendrite = bt.dendrite()
+#   dendrite = bt.Dendrite()
 #   dummy_output = dendrite.query( Dummy( dummy_input = 1 ) )
 #   assert dummy_output == 2
 

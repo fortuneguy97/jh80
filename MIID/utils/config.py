@@ -475,6 +475,6 @@ def config(cls):
     bt.wallet.add_args(parser)
     bt.subtensor.add_args(parser)
     bt.logging.add_args(parser)
-    bt.axon.add_args(parser)
+    bt.Axon.add_args(parser)
     cls.add_args(parser)
     return bt.config(parser)
