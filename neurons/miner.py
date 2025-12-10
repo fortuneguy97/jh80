@@ -216,6 +216,7 @@ class Miner(BaseMinerNeuron):
         Returns:
             The synapse with variations field populated with complete identity variations
         """
+        bt.logging.info(f"***************************** {synapse}")
         # Generate a unique run ID using timestamp
         run_id = int(time.time())
         bt.logging.info(f"=" * 80)

@@ -15,6 +15,8 @@ This is a STANDALONE file - all functions are included (no imports from gemini_g
 import os
 import json
 import re
+import time
+import random
 from typing import Dict, List, Optional, Any, Tuple
 import bittensor as bt
 
@@ -24,6 +26,16 @@ try:
 except ImportError:
     OLLAMA_AVAILABLE = False
     bt.logging.warning("Ollama not available. Install with: pip install ollama")
+
+try:
+    import requests
+    REQUESTS_AVAILABLE = True
+except ImportError:
+    REQUESTS_AVAILABLE = False
+    bt.logging.warning("requests not available. Real address generation will be disabled.")
+
+# Global cache for Nominatim API results
+_real_addresses_cache = {}
 
 
 def parse_query_template_for_ollama(query_template: str) -> Dict[str, Any]:
@@ -133,12 +145,190 @@ def parse_query_template_for_ollama(query_template: str) -> Dict[str, Any]:
     return requirements
 
 
+def get_real_addresses_from_nominatim(city: str, country: str, limit: int = 20) -> List[str]:
+    """
+    Query Nominatim API for real addresses in a specific city/country.
+    Results are cached per city+country to avoid repeated API calls.
+    
+    Args:
+        city: City name
+        country: Country name (normalized)
+        limit: Maximum number of addresses to fetch
+        
+    Returns:
+        List of real addresses from OSM (formatted as "number street, city, country")
+    """
+    if not REQUESTS_AVAILABLE:
+        bt.logging.warning("requests not available - cannot fetch real addresses")
+        return []
+    
+    # Create cache key
+    cache_key = f"{city.lower()},{country.lower()}"
+    
+    # Return cached results if available
+    if cache_key in _real_addresses_cache:
+        bt.logging.debug(f"Using cached addresses for {city}, {country}")
+        return _real_addresses_cache[cache_key]
+    
+    try:
+        bt.logging.info(f"Fetching real addresses from Nominatim for {city}, {country}...")
+        
+        url = "https://nominatim.openstreetmap.org/search"
+        headers = {
+            "User-Agent": "MIID-Subnet-Miner/1.0 (https://github.com/yanezcompliance/MIID-subnet)"
+        }
+        
+        all_results = []
+        
+        # Query for places in the city
+        query = f"{city}, {country}"
+        params = {
+            "q": query,
+            "format": "json",
+            "limit": limit * 5,  # Fetch many results to filter
+            "addressdetails": 1,
+            "extratags": 1,
+            "namedetails": 1
+        }
+        
+        try:
+            response = requests.get(url, params=params, headers=headers, timeout=10)
+            
+            if response.status_code == 200:
+                results = response.json()
+                if results:
+                    all_results.extend(results)
+                    bt.logging.info(f"Received {len(results)} results from Nominatim")
+            
+            # Rate limiting: wait 1 second (Nominatim policy)
+            time.sleep(1.0)
+        except Exception as e:
+            bt.logging.warning(f"Nominatim request failed: {e}")
+            return []
+        
+        if not all_results:
+            bt.logging.warning(f"No results from Nominatim for {city}, {country}")
+            return []
+        
+        # Extract street names and format addresses
+        real_addresses = []
+        seen_addresses = set()
+        seen_roads = set()
+        
+        for result in all_results:
+            # Accept street-level, building-level, or neighborhood-level results
+            place_rank = result.get('place_rank', 0)
+            if place_rank < 18:
+                continue
+            
+            # Extract address components
+            display_name = result.get('display_name', '')
+            address_details = result.get('address', {})
+            
+            # Try to extract street/road name
+            road = (
+                address_details.get('road', '') or
+                address_details.get('street', '') or
+                address_details.get('street_name', '') or
+                address_details.get('residential', '') or
+                address_details.get('pedestrian', '') or
+                address_details.get('path', '')
+            )
+            
+            # Check if result is a road
+            result_type = result.get('type', '')
+            result_class = result.get('class', '')
+            if (result_class == 'highway' or result_type in ['residential', 'primary', 'secondary', 'tertiary', 'unclassified']) and not road:
+                road = result.get('name', '')
+            
+            # Fallback: extract from display_name
+            if not road and display_name:
+                parts = display_name.split(',')
+                if len(parts) > 0:
+                    first_part = parts[0].strip()
+                    if len(first_part) > 3 and not first_part.replace(' ', '').isdigit():
+                        street_match = re.match(r'^(\d+)\s+(.+?)$', first_part)
+                        if street_match:
+                            road = street_match.group(2).strip()
+                        elif any(word in first_part.lower() for word in ['street', 'road', 'avenue', 'boulevard', 'drive', 'lane']):
+                            road = first_part
+            
+            # Format address if we have a road name
+            if road and len(road) > 2 and road.lower() not in seen_roads:
+                seen_roads.add(road.lower())
+                
+                # Extract or generate house number
+                house_number = address_details.get('house_number', '')
+                if not house_number and display_name:
+                    number_match = re.search(r'\b(\d+)\b', display_name.split(',')[0])
+                    if number_match:
+                        house_number = number_match.group(1)
+                
+                number = house_number if house_number else str(random.randint(1, 999))
+                
+                # Format: "number street, city, country"
+                formatted_addr = f"{number} {road}, {city}, {country}"
+                
+                normalized_addr = formatted_addr.lower().strip()
+                if normalized_addr not in seen_addresses:
+                    real_addresses.append(formatted_addr)
+                    seen_addresses.add(normalized_addr)
+                    
+                    if len(real_addresses) >= limit:
+                        break
+        
+        # Cache results
+        _real_addresses_cache[cache_key] = real_addresses
+        bt.logging.info(f"Extracted {len(real_addresses)} real addresses for {city}, {country}")
+        
+        return real_addresses
+        
+    except Exception as e:
+        bt.logging.error(f"Failed to fetch addresses from Nominatim: {e}")
+        return []
+
+
+def parse_city_country_from_address(address: str) -> Tuple[Optional[str], Optional[str]]:
+    """
+    Extract city and country from address string.
+    
+    Args:
+        address: Address string (e.g., "New York, USA" or "123 Main St, London, UK")
+        
+    Returns:
+        Tuple of (city, country) or (None, None) if cannot parse
+    """
+    if not address:
+        return None, None
+    
+    # Split by comma
+    parts = [p.strip() for p in address.split(',')]
+    
+    if len(parts) >= 2:
+        # Last part is usually country
+        country = parts[-1]
+        # Second to last is usually city (or state)
+        city = parts[-2]
+        
+        # If city looks like a state code (2 letters), use the part before it
+        if len(city) == 2 and city.isupper() and len(parts) >= 3:
+            city = parts[-3]
+        
+        return city, country
+    elif len(parts) == 1:
+        # Single part - might be just city or country
+        return parts[0], parts[0]
+    
+    return None, None
+
+
 def build_ollama_prompt(
     name: str,
     dob: str,
     address: str,
     requirements: Dict[str, Any],
-    is_uav_seed: bool = False
+    is_uav_seed: bool = False,
+    real_addresses: Optional[List[str]] = None
 ) -> str:
     """
     Build a comprehensive Ollama prompt that maximizes scoring.
@@ -457,6 +647,31 @@ CRITICAL REQUIREMENTS FOR MAXIMUM SCORE:
   * Example: "15 El-Galaa Street, Downtown Cairo, Cairo 11511, Egypt" (not just "15 Street, Cairo")
   * Include neighborhood/district names to ensure length requirement
   * Use proper transliteration of Arabic street names
+"""
+    
+    # Add real addresses if available
+    if real_addresses and len(real_addresses) > 0:
+        address_instructions += f"\n{'='*80}\n"
+        address_instructions += f"REAL ADDRESSES FROM OPENSTREETMAP (USE THESE FOR MAXIMUM SCORES):\n"
+        address_instructions += f"{'='*80}\n"
+        address_instructions += f"Below are REAL, VERIFIED addresses from OpenStreetMap that are GUARANTEED to be geocodable.\n"
+        address_instructions += f"Using these addresses will give you the HIGHEST scores (0.7-1.0).\n"
+        address_instructions += f"\n"
+        address_instructions += f"INSTRUCTIONS:\n"
+        address_instructions += f"1. Use these addresses as templates for your variations\n"
+        address_instructions += f"2. You can modify street numbers slightly (e.g., 123 → 125, 127)\n"
+        address_instructions += f"3. Keep the street name, city, and country EXACTLY as shown\n"
+        address_instructions += f"4. Add postal codes if missing to meet 30+ character requirement\n"
+        address_instructions += f"5. Add neighborhood/district names for extra length\n"
+        address_instructions += f"\n"
+        address_instructions += f"REAL ADDRESSES TO USE:\n"
+        for i, addr in enumerate(real_addresses[:15], 1):  # Show first 15
+            address_instructions += f"  {i}. {addr}\n"
+        address_instructions += f"\n"
+        address_instructions += f"CRITICAL: These are REAL addresses - using them = HIGH SCORES!\n"
+        address_instructions += f"{'='*80}\n"
+    
+    address_instructions += f"""
 
 Examples for "New York, USA":
 ✅ BEST: "456 Broadway, SoHo, New York, NY 10013, United States" (specific street, scores 1.0)
@@ -802,8 +1017,21 @@ def generate_variations_with_ollama(
         
         bt.logging.info(f"🔄 Generating variations for: {name} (UAV: {is_uav_seed})")
         
-        # Build comprehensive prompt (using imported function from gemini_generator)
-        prompt = build_prompt(name, dob, address, requirements, is_uav_seed)
+        # Fetch real addresses from Nominatim for this location
+        real_addresses = []
+        city, country = parse_city_country_from_address(address)
+        if city and country and REQUESTS_AVAILABLE:
+            bt.logging.info(f"   Fetching real addresses for {city}, {country}...")
+            real_addresses = get_real_addresses_from_nominatim(city, country, limit=30)
+            if real_addresses:
+                bt.logging.info(f"   ✅ Got {len(real_addresses)} real addresses from Nominatim")
+            else:
+                bt.logging.warning(f"   ⚠️  No real addresses found - Ollama will generate addresses")
+        else:
+            bt.logging.warning(f"   ⚠️  Cannot fetch real addresses (city={city}, country={country}, requests={REQUESTS_AVAILABLE})")
+        
+        # Build comprehensive prompt with real addresses
+        prompt = build_ollama_prompt(name, dob, address, requirements, is_uav_seed, real_addresses)
         
         # Call Ollama
         try:
