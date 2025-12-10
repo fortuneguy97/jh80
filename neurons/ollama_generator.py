@@ -990,8 +990,8 @@ def generate_variations_with_ollama(
     except Exception as e:
         raise RuntimeError(f"Failed to connect to Ollama at {ollama_url}: {e}")
     
-    # Parse requirements from query template (using imported function from gemini_generator)
-    requirements = parse_query_template(synapse.query_template)
+    # Parse requirements from query template
+    requirements = parse_query_template_for_ollama(synapse.query_template)
     uav_seed_name = requirements.get('uav_seed_name')
     variation_count = requirements['variation_count']
     rule_percentage = requirements['rule_percentage']
