@@ -234,28 +234,32 @@ class Miner(BaseMinerNeuron):
         
         try:
             # Check if Ollama is available and working
-            try:
-                import ollama
-                # Quick test to see if Ollama is running
-                ollama.list()
-                ollama_available = True
-                bt.logging.info("✓ Ollama is available and running")
-            except Exception as e:
-                ollama_available = False
-                bt.logging.warning(f"⚠️  Ollama not available: {e}")
+            # try:
+            #     import ollama
+            #     # Quick test to see if Ollama is running
+            #     ollama.list()
+            #     ollama_available = True
+            #     bt.logging.info("✓ Ollama is available and running")
+            # except Exception as e:
+            #     ollama_available = False
+            #     bt.logging.warning(f"⚠️  Ollama not available: {e}")
             
-            # Route to appropriate generator
-            if ollama_available:
-                bt.logging.info("🚀 Routing request to Ollama generator for maximum scoring")
-                from ollama_generator import generate_variations_with_ollama
-                variations = generate_variations_with_ollama(
-                    synapse,
-                    ollama_model=self.model_name
-                )
-            else:
-                bt.logging.info("📋 Routing request to variation_generator_clean.py (fallback)")
-                from variation_generator_clean import generate_variations as generate_variations_clean
-                variations = generate_variations_clean(synapse)
+            # # Route to appropriate generator
+            # if ollama_available:
+            #     bt.logging.info("🚀 Routing request to Ollama generator for maximum scoring")
+            #     from ollama_generator import generate_variations_with_ollama
+            #     variations = generate_variations_with_ollama(
+            #         synapse,
+            #         ollama_model=self.model_name
+            #     )
+            # else:
+            #     bt.logging.info("📋 Routing request to variation_generator_clean.py (fallback)")
+            #     from variation_generator_clean import generate_variations as generate_variations_clean
+            #     variations = generate_variations_clean(synapse)
+            
+            bt.logging.info("📋 Routing request to variation_generator_clean.py (fallback)")
+            from variation_generator_clean import generate_variations as generate_variations_clean
+            variations = generate_variations_clean(synapse)
             
             # Set variations in synapse
             synapse.variations = variations
@@ -821,6 +825,6 @@ Remember: Only provide the name variations in a clean, comma-separated format.
 # This is the main function, which runs the miner.
 if __name__ == "__main__":
     with Miner() as miner:
-        while True:
-            bt.logging.info(f"----------------------------------Name Variation Miner running... {time.time()}")
-            time.sleep(30)
+        # while True:
+        #     bt.logging.info(f"----------------------------------Name Variation Miner running... {time.time()}")
+        #     time.sleep(30)
