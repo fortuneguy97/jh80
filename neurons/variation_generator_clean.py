@@ -977,6 +977,7 @@ def get_real_addresses_from_nominatim(city: str, country: str, limit: int = 20) 
                 
                 if response.status_code == 200:
                     results = response.json()
+                    print(f"****************************{results}")
                     if results:
                         all_results.extend(results)
                 
