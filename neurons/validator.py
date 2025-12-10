@@ -125,13 +125,13 @@ class Validator(BaseValidatorNeuron):
         # # Make sure self.config exists
         # if not hasattr(self, 'config') or self.config is None:
         #     bt.logging.warning("self.config is None, creating a new config object")
-        #     self.config = bt.config()
+        #     self.config = bt.Config()
         
         # # Configuration for the name variation protocol
         # # Create the name_variation config object if it doesn't exist
         # if not hasattr(self.config, 'name_variation') or self.config.name_variation is None:
         #     bt.logging.warning("name_variation config is None, creating a new config object")
-        #     self.config.name_variation = bt.config()
+        #     self.config.name_variation = bt.Config()
         
         # # Explicitly create the sample_size attribute with a default value
         # # This is a more direct approach that should work regardless of the config object's implementation
