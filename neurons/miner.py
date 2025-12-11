@@ -45,6 +45,7 @@ This modular approach provides:
 
 import time
 import typing
+import argparse
 import bittensor as bt
 import os
 import sys
@@ -386,6 +387,24 @@ class Miner(BaseMinerNeuron):
             f"Prioritizing {synapse.dendrite.hotkey} with value: {priority}"
         )
         return priority
+
+    @classmethod
+    def config(cls):
+        """
+        Returns the configuration object specific to this miner after adding relevant arguments.
+        """
+        parser = argparse.ArgumentParser()
+        bt.Wallet.add_args(parser)
+        bt.Subtensor.add_args(parser)
+        bt.logging.add_args(parser)
+        bt.Axon.add_args(parser)
+        
+        # Import and add miner-specific arguments
+        from MIID.utils.config import add_args, add_miner_args
+        add_args(cls, parser)
+        add_miner_args(cls, parser)
+        
+        return bt.Config(parser)
 
 
 # This is the main function, which runs the miner.
