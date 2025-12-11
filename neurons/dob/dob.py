@@ -1,4 +1,4 @@
-def generate_dob_variations(dob: str, count: int = 15) -> List[str]:
+def generate_dob_variations(dob: str, count: int = 15) :
     """Generate DOB variations"""
     try:
         base_date = datetime.strptime(dob, "%Y-%m-%d")
