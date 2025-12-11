@@ -174,7 +174,7 @@ class Miner(BaseMinerNeuron):
         # Get timeout from synapse (default to 120s if not specified)
         timeout = getattr(synapse, 'timeout', 120.0)
         bt.logging.info(f"#⏱️  Request timeout: {timeout:.1f}s")
-        print(synapse)
+        print(synapse.identity)
         bt.logging.info("=" * 80)
         try:
             # Step 1: Parse query template to extract requirements
