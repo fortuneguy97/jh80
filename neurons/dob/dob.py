@@ -1,3 +1,6 @@
+from datetime import datetime, timedelta
+import random
+
 def generate_dob_variations(dob: str, count: int = 15) :
     """Generate DOB variations"""
     try:
