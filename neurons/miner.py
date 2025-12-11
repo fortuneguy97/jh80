@@ -174,12 +174,16 @@ class Miner(BaseMinerNeuron):
         # Get timeout from synapse (default to 120s if not specified)
         timeout = getattr(synapse, 'timeout', 120.0)
         bt.logging.info(f"⏱️  Request timeout: {timeout:.1f}s")
-        
+        print(synapse)
+        bt.logging.info("=" * 80)
         try:
             # Step 1: Parse query template to extract requirements
             bt.logging.info("📋 Step 1: Parsing query template...")
             parsed_query = parse_query_template(synapse.query_template)
             
+            bt.logging.info("=" * 80)
+            print(parsed_query)
+            bt.logging.info("=" * 80)
             # Step 2: Generate variations for each identity
             bt.logging.info("🔄 Step 2: Generating identity variations...")
             variations = {}
@@ -236,7 +240,7 @@ class Miner(BaseMinerNeuron):
                 sample_vars = variations[sample_name][:3]  # First 3 variations
                 bt.logging.info(f"📝 Sample variations for '{sample_name}':")
                 for i, var in enumerate(sample_vars, 1):
-                    bt.logging.info(f"   {i}. Name: {var[0]}, DOB: {var[1]}, Address: {var[2][:50]}...")
+                    bt.logging.info(f"   {i}. Name: {var[0]}, DOB: {var[1]}, Address: {var[2]}...")
             
         except Exception as e:
             bt.logging.error(f"✗ Unexpected error in modular generation: {e}")
