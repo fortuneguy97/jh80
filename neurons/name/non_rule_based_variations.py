@@ -284,12 +284,12 @@ def _clean_ollama_variations_with_dedup(raw_output: str, original_name: str, tar
                         all_candidates.append(cleaned)
                         used.add(cleaned.lower())
     
-    bt.logging.debug(f"Found {len(all_candidates)} unique candidates from Ollama")
+    # bt.logging.debug(f"Found {len(all_candidates)} unique candidates from Ollama")
     
     # Select the BEST variations for higher TAO rewards
     selected_variations = _select_best_variations(all_candidates, original_name, target_count)
     
-    bt.logging.debug(f"Selected {len(selected_variations)} best unique variations")
+    # bt.logging.debug(f"Selected {len(selected_variations)} best unique variations")
     return selected_variations
 
 
@@ -678,8 +678,8 @@ def _is_too_similar_to_existing(candidate: str, existing_variations: set) -> boo
         similarity = _calculate_character_similarity(candidate_lower, existing_lower)
         
         # If similarity is very high (>90%), consider it a duplicate
-        if similarity > 0.9:
-            bt.logging.debug(f"Rejecting '{candidate}' - too similar to existing '{existing}' (similarity: {similarity:.2f})")
+        if similarity > 0.93:
+            # bt.logging.debug(f"Rejecting '{candidate}' - too similar to existing '{existing}' (similarity: {similarity:.2f})")
             return True
         
         # Check for common near-duplicate patterns

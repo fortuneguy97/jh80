@@ -57,30 +57,25 @@ def generate_name_variations(name: str, parsed_query: Dict[str, Any]) -> List[st
     rule_based_count = int(variation_count * rule_percentage) if rules else 0
     non_rule_based_count = variation_count - rule_based_count
     
-    bt.logging.info(f"   📝 Total variations: {variation_count}")
-    bt.logging.info(f"   🔧 Rule-based count: {rule_based_count}")
-    bt.logging.info(f"   🎲 Non-rule-based count: {non_rule_based_count}")
-    
     variations = []
     used = set([name.lower()])
     
     # Generate rule-based variations first
     rule_variations = []
     if rule_based_count > 0 and rules:
-        bt.logging.info("   🔧 Generating rule-based variations...")
+        
         rule_variations = generate_rule_based_variations(name, rules, rule_based_count)
         
+        print("--------------rule--------------")
+        print(rule_variations)
         # Add rule-based variations to used set and final list
         for var in rule_variations:
             if var.lower() not in used:
                 variations.append(var)
                 used.add(var.lower())
         
-        bt.logging.info(f"   ✅ Generated {len(variations)} unique rule-based variations")
-    
     # Generate non-rule-based variations with deduplication
     if non_rule_based_count > 0:
-        bt.logging.info("   🎲 Generating non-rule-based variations...")
         
         # Extract similarity requirements
         phonetic_similarity = parsed_query.get('phonetic_similarity', {})
@@ -90,7 +85,8 @@ def generate_name_variations(name: str, parsed_query: Dict[str, Any]) -> List[st
         non_rule_variations = generate_ollama_variations_with_dedup(
             name, non_rule_based_count, phonetic_similarity, orthographic_similarity, used.copy()
         )
-        
+        print("-----------------non_rule---------------")
+        print(non_rule_variations)
         # Add non-rule variations with deduplication
         added_count = 0
         for var in non_rule_variations:
@@ -99,7 +95,6 @@ def generate_name_variations(name: str, parsed_query: Dict[str, Any]) -> List[st
                 used.add(var.lower())
                 added_count += 1
         
-        bt.logging.info(f"   ✅ Generated {added_count} unique non-rule-based variations")
     
     # Ensure we have the target count
     if len(variations) < variation_count:
@@ -110,7 +105,6 @@ def generate_name_variations(name: str, parsed_query: Dict[str, Any]) -> List[st
     # Trim to exact count if we have too many
     variations = variations[:variation_count]
     
-    bt.logging.info(f"✅ Generated {len(variations)} total name variations")
     return variations
 
 

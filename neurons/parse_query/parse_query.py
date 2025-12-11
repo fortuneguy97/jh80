@@ -46,7 +46,6 @@ def parse_query_template(query_template: str) -> Dict[str, Any]:
             'original_query': str
         }
     """
-    bt.logging.info("🔍 Parsing query template for requirements...")
     
     requirements = {
         'variation_count': 15,  # Default fallback
@@ -62,39 +61,32 @@ def parse_query_template(query_template: str) -> Dict[str, Any]:
     variation_count = _extract_variation_count(query_template)
     if variation_count:
         requirements['variation_count'] = variation_count
-        bt.logging.info(f"✓ Variation count: {variation_count}")
     
     # Extract rule percentage
     rule_percentage = _extract_rule_percentage(query_template)
     if rule_percentage is not None:
         requirements['rule_percentage'] = rule_percentage
-        bt.logging.info(f"✓ Rule percentage: {rule_percentage:.1%}")
     
     # Extract specific rules
     rules = _extract_rules(query_template)
     if rules:
         requirements['rules'] = rules
-        bt.logging.info(f"✓ Rules found: {', '.join(rules)}")
     
     # Extract phonetic similarity distribution
     phonetic_sim = _extract_phonetic_similarity(query_template)
     if phonetic_sim:
         requirements['phonetic_similarity'] = phonetic_sim
-        bt.logging.info(f"✓ Phonetic similarity: {phonetic_sim}")
     
     # Extract orthographic similarity distribution
     ortho_sim = _extract_orthographic_similarity(query_template)
     if ortho_sim:
         requirements['orthographic_similarity'] = ortho_sim
-        bt.logging.info(f"✓ Orthographic similarity: {ortho_sim}")
     
     # Extract UAV seed name
     uav_seed = _extract_uav_seed(query_template)
     if uav_seed:
         requirements['uav_seed_name'] = uav_seed
-        bt.logging.info(f"✓ UAV seed: {uav_seed}")
     
-    bt.logging.info("✅ Query parsing completed")
     return requirements
 
 

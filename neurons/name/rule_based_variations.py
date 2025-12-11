@@ -38,9 +38,6 @@ def generate_rule_based_variations(name: str, rules: List[str], count: int) -> L
     Returns:
         List of rule-based name variations
     """
-    bt.logging.debug(f"🔧 Generating {count} rule-based variations for: '{name}'")
-    bt.logging.debug(f"   📋 Rules to apply: {rules}")
-    
     if count <= 0 or not rules:
         return []
     
@@ -57,7 +54,6 @@ def generate_rule_based_variations(name: str, rules: List[str], count: int) -> L
                 variations.append(var)
                 used.add(var.lower())
     
-    bt.logging.debug(f"   ✅ Generated {len(variations)} rule-based variations")
     return variations
 
 
@@ -440,7 +436,7 @@ def _change_case_pattern(name: str, count: int) -> List[str]:
                 alt_case += char
         if alt_case != name:
             variations.append(alt_case)
-    
+    print(variations[:count])
     return variations[:count]
 
 

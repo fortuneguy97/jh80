@@ -112,12 +112,12 @@ class Miner(BaseMinerNeuron):
         
         super(Miner, self).__init__(config=config)
         
-        bt.logging.info("🏗️  Initializing Modular Identity Variation Miner")
+        bt.logging.info("#🏗️  Initializing Modular Identity Variation Miner")
         
         # Set up validator verification
         self.axon.verify_fns[IdentitySynapse.__name__] = self._verify_validator_request
         
-        bt.logging.info("✅ Modular miner initialization complete")
+        bt.logging.info("#✅ Modular miner initialization complete")
 
     async def _verify_validator_request(self, synapse: IdentitySynapse) -> None:
         """
@@ -165,7 +165,7 @@ class Miner(BaseMinerNeuron):
 
     async def forward(self, synapse: IdentitySynapse) -> IdentitySynapse:
         
-        bt.logging.info(f"🎯 Processing request with {len(synapse.identity)} identities")
+        bt.logging.info(f"#🎯 Processing request with {len(synapse.identity)} identities")
         
         # Generate a unique run ID using timestamp
         run_id = int(time.time())
@@ -173,19 +173,19 @@ class Miner(BaseMinerNeuron):
         
         # Get timeout from synapse (default to 120s if not specified)
         timeout = getattr(synapse, 'timeout', 120.0)
-        bt.logging.info(f"⏱️  Request timeout: {timeout:.1f}s")
+        bt.logging.info(f"#⏱️  Request timeout: {timeout:.1f}s")
         print(synapse)
         bt.logging.info("=" * 80)
         try:
             # Step 1: Parse query template to extract requirements
-            bt.logging.info("📋 Step 1: Parsing query template...")
+            bt.logging.info("#📋 Step 1: Parsing query template...")
             parsed_query = parse_query_template(synapse.query_template)
             
             bt.logging.info("=" * 80)
             print(parsed_query)
             bt.logging.info("=" * 80)
             # Step 2: Generate variations for each identity
-            bt.logging.info("🔄 Step 2: Generating identity variations...")
+            bt.logging.info("#🔄 Step 2: Generating identity variations...")
             variations = {}
             variation_count = parsed_query.get('variation_count', 15)
             for i, identity in enumerate(synapse.identity):
@@ -193,8 +193,6 @@ class Miner(BaseMinerNeuron):
                 name = identity[0] if len(identity) > 0 else "Unknown"
                 dob = identity[1] if len(identity) > 1 else "1990-01-01"
                 address = identity[2] if len(identity) > 2 else "Unknown"
-                
-                bt.logging.info(f"   Processing identity {i+1}/{len(synapse.identity)}: {name}")
                 
                 try:
                     # Generate variations for each component
@@ -212,10 +210,8 @@ class Miner(BaseMinerNeuron):
                     
                     variations[name] = identity_variations
                     
-                    bt.logging.info(f"   ✓ Generated {len(identity_variations)} complete variations for {name}")
-                    
                 except Exception as e:
-                    bt.logging.error(f"   ✗ Error processing {name}: {e}")
+                    bt.logging.error(f"#   ✗ Error processing {name}: {e}")
                     # Fallback: create basic variations
                     variations[name] = [[name, dob, address]] * parsed_query.get('variation_count', 15)
             
@@ -238,12 +234,12 @@ class Miner(BaseMinerNeuron):
             if variations:
                 sample_name = list(variations.keys())[0]
                 sample_vars = variations[sample_name]  # First 3 variations
-                bt.logging.info(f"📝 Sample variations for '{sample_name}':")
+                bt.logging.info(f"#📝 Sample variations for '{sample_name}':")
                 for i, var in enumerate(sample_vars, 1):
-                    bt.logging.info(f"   {i}. Name: {var[0]}, DOB: {var[1]}, Address: {var[2]}...")
+                    bt.logging.info(f"#   {i}. Name: {var[0]}, DOB: {var[1]}, Address: {var[2]}...")
             
         except Exception as e:
-            bt.logging.error(f"✗ Unexpected error in modular generation: {e}")
+            bt.logging.error(f"#✗ Unexpected error in modular generation: {e}")
             import traceback
             bt.logging.error(traceback.format_exc())
             
@@ -415,5 +411,5 @@ class Miner(BaseMinerNeuron):
 if __name__ == "__main__":
     with Miner() as miner:
         while True:
-            bt.logging.info(f"----------------------------------Name Variation Miner running... {time.time()}")
+            # bt.logging.info(f"----------------------------------Name Variation Miner running... {time.time()}")
             time.sleep(30)
