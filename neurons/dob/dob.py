@@ -1,0 +1,28 @@
+def generate_dob_variations(dob: str, count: int = 15) -> List[str]:
+    """Generate DOB variations"""
+    try:
+        base_date = datetime.strptime(dob, "%Y-%m-%d")
+    except:
+        base_date = datetime(1990, 1, 1)
+    
+    variations = []
+    
+    variations.append((base_date + timedelta(days=1)).strftime("%Y-%m-%d"))
+    variations.append((base_date + timedelta(days=3)).strftime("%Y-%m-%d"))
+    variations.append((base_date - timedelta(days=30)).strftime("%Y-%m-%d"))
+    variations.append((base_date + timedelta(days=90)).strftime("%Y-%m-%d"))
+    variations.append((base_date - timedelta(days=365)).strftime("%Y-%m-%d"))
+    variations.append(base_date.strftime("%Y-%m"))
+    variations.append((base_date - timedelta(days=1)).strftime("%Y-%m-%d"))
+    variations.append((base_date - timedelta(days=3)).strftime("%Y-%m-%d"))
+    variations.append((base_date + timedelta(days=30)).strftime("%Y-%m-%d"))
+    variations.append((base_date - timedelta(days=90)).strftime("%Y-%m-%d"))
+    variations.append((base_date + timedelta(days=365)).strftime("%Y-%m-%d"))
+    
+    # Fill remaining with random variations
+    while len(variations) < count:
+        days_offset = random.randint(-365, 365)
+        new_date = base_date + timedelta(days=days_offset)
+        variations.append(new_date.strftime("%Y-%m-%d"))
+    
+    return variations[:count]
