@@ -54,6 +54,7 @@ def parse_query_template(query_template: str) -> Dict[str, Any]:
         'phonetic_similarity': {},
         'orthographic_similarity': {},
         'uav_seed_name': None,
+        'target_names': [],  # Initialize target names list
         'original_query': query_template
     }
     
@@ -160,18 +161,38 @@ def _extract_phonetic_similarity(query_template: str) -> Dict[str, float]:
     """Extract phonetic similarity distribution requirements."""
     phonetic_sim = {}
     
-    # Look for phonetic similarity patterns
-    phonetic_light = re.search(r'phonetic.*?Light[:\s]+(\d+)%', query_template, re.I)
-    phonetic_medium = re.search(r'phonetic.*?Medium[:\s]+(\d+)%', query_template, re.I)
-    phonetic_far = re.search(r'phonetic.*?Far[:\s]+(\d+)%', query_template, re.I)
+    # Enhanced patterns to match your query format
+    patterns = [
+        # Pattern 1: "phonetic similarity (30% Light, 40% Medium, 30% Far)"
+        r'phonetic\s+similarity\s*\(([^)]+)\)',
+        # Pattern 2: "phonetic similarity: 30% Light, 40% Medium, 30% Far"
+        r'phonetic\s+similarity[:\s]+([^.]+)',
+        # Pattern 3: Original patterns
+        r'phonetic.*?Light[:\s]+(\d+)%.*?Medium[:\s]+(\d+)%.*?Far[:\s]+(\d+)%',
+    ]
     
-    if phonetic_light:
-        phonetic_sim['Light'] = int(phonetic_light.group(1)) / 100
-    if phonetic_medium:
-        phonetic_sim['Medium'] = int(phonetic_medium.group(1)) / 100
-    if phonetic_far:
-        phonetic_sim['Far'] = int(phonetic_far.group(1)) / 100
+    for pattern in patterns:
+        match = re.search(pattern, query_template, re.I | re.DOTALL)
+        if match:
+            similarity_text = match.group(1) if len(match.groups()) == 1 else match.group(0)
+            
+            # Extract percentages for Light, Medium, Far
+            light_match = re.search(r'(\d+)%\s*Light', similarity_text, re.I)
+            medium_match = re.search(r'(\d+)%\s*Medium', similarity_text, re.I)
+            far_match = re.search(r'(\d+)%\s*Far', similarity_text, re.I)
+            
+            if light_match:
+                phonetic_sim['Light'] = int(light_match.group(1)) / 100
+            if medium_match:
+                phonetic_sim['Medium'] = int(medium_match.group(1)) / 100
+            if far_match:
+                phonetic_sim['Far'] = int(far_match.group(1)) / 100
+            
+            # If we found any matches, break
+            if phonetic_sim:
+                break
     
+    bt.logging.debug(f"Extracted phonetic similarity: {phonetic_sim}")
     return phonetic_sim
 
 
@@ -179,18 +200,38 @@ def _extract_orthographic_similarity(query_template: str) -> Dict[str, float]:
     """Extract orthographic similarity distribution requirements."""
     ortho_sim = {}
     
-    # Look for orthographic similarity patterns
-    ortho_light = re.search(r'orthographic.*?Light[:\s]+(\d+)%', query_template, re.I)
-    ortho_medium = re.search(r'orthographic.*?Medium[:\s]+(\d+)%', query_template, re.I)
-    ortho_far = re.search(r'orthographic.*?Far[:\s]+(\d+)%', query_template, re.I)
+    # Enhanced patterns to match your query format
+    patterns = [
+        # Pattern 1: "orthographic similarity (50% Light, 50% Medium)"
+        r'orthographic\s+similarity\s*\(([^)]+)\)',
+        # Pattern 2: "orthographic similarity: 50% Light, 50% Medium"
+        r'orthographic\s+similarity[:\s]+([^.]+)',
+        # Pattern 3: Original patterns
+        r'orthographic.*?Light[:\s]+(\d+)%.*?Medium[:\s]+(\d+)%.*?Far[:\s]+(\d+)%',
+    ]
     
-    if ortho_light:
-        ortho_sim['Light'] = int(ortho_light.group(1)) / 100
-    if ortho_medium:
-        ortho_sim['Medium'] = int(ortho_medium.group(1)) / 100
-    if ortho_far:
-        ortho_sim['Far'] = int(ortho_far.group(1)) / 100
+    for pattern in patterns:
+        match = re.search(pattern, query_template, re.I | re.DOTALL)
+        if match:
+            similarity_text = match.group(1) if len(match.groups()) == 1 else match.group(0)
+            
+            # Extract percentages for Light, Medium, Far
+            light_match = re.search(r'(\d+)%\s*Light', similarity_text, re.I)
+            medium_match = re.search(r'(\d+)%\s*Medium', similarity_text, re.I)
+            far_match = re.search(r'(\d+)%\s*Far', similarity_text, re.I)
+            
+            if light_match:
+                ortho_sim['Light'] = int(light_match.group(1)) / 100
+            if medium_match:
+                ortho_sim['Medium'] = int(medium_match.group(1)) / 100
+            if far_match:
+                ortho_sim['Far'] = int(far_match.group(1)) / 100
+            
+            # If we found any matches, break
+            if ortho_sim:
+                break
     
+    bt.logging.debug(f"Extracted orthographic similarity: {ortho_sim}")
     return ortho_sim
 
 
@@ -252,6 +293,147 @@ def calculate_rule_count(variation_count: int, rule_percentage: float) -> int:
     """
     import math
     return math.ceil(variation_count * rule_percentage)
+
+
+def extract_names_from_identity(identity_list) -> List[str]:
+    """
+    Extract names from synapse.identity list.
+    This is the CRITICAL function that prevents extra names penalty.
+    """
+    names = []
+    
+    if not identity_list:
+        return names
+    
+    for identity in identity_list:
+        if isinstance(identity, (list, tuple)) and len(identity) > 0:
+            name = identity[0]
+            if isinstance(name, str) and name.strip():
+                cleaned_name = name.strip()
+                if _is_valid_name(cleaned_name):
+                    names.append(cleaned_name)
+    
+    bt.logging.info(f"Extracted {len(names)} names from identity list")
+    return names
+
+
+def extract_names_from_synapse(synapse) -> List[str]:
+    """
+    Extract names from synapse attributes as fallback.
+    """
+    names = []
+    
+    # Try to extract from identity attribute
+    if hasattr(synapse, 'identity') and synapse.identity:
+        names = extract_names_from_identity(synapse.identity)
+    
+    # Try other possible attributes if identity doesn't work
+    if not names:
+        for attr_name in ['names', 'name_list', 'target_names']:
+            if hasattr(synapse, attr_name):
+                attr_value = getattr(synapse, attr_name)
+                if isinstance(attr_value, list):
+                    for item in attr_value:
+                        if isinstance(item, str) and item.strip():
+                            names.append(item.strip())
+                elif isinstance(attr_value, str) and attr_value.strip():
+                    names.append(attr_value.strip())
+    
+    return names
+
+
+def _is_valid_name(name: str) -> bool:
+    """
+    Validate that a string is a valid name.
+    """
+    if not name or len(name.strip()) < 2:
+        return False
+    
+    # Check for basic name patterns (letters, spaces, hyphens, apostrophes)
+    if not re.match(r"^[A-Za-zÀ-ÿ]+([ '\-][A-Za-zÀ-ÿ]+)*$", name):
+        return False
+    
+    # Reject if it looks like an address or date
+    name_lower = name.lower()
+    
+    # Check for numbers (names shouldn't have numbers)
+    if re.search(r'\d', name):
+        return False
+    
+    # Check for address indicators
+    address_words = ['street', 'st', 'avenue', 'ave', 'road', 'rd', 'drive', 'dr', 'lane', 'ln']
+    for word in address_words:
+        if word in name_lower:
+            return False
+    
+    return True
+
+
+def get_complete_requirements(query_template: str, synapse=None) -> Dict[str, Any]:
+    """
+    Get complete requirements including target names from both query and synapse.
+    This is the main function to use in your miner.
+    """
+    # Parse query template
+    requirements = parse_query_template(query_template)
+    
+    # Initialize target_names if not present
+    if 'target_names' not in requirements:
+        requirements['target_names'] = []
+    
+    # CRITICAL FIX: For {name} templates, extract names from synapse.identity
+    if '{name}' in query_template and synapse and hasattr(synapse, 'identity'):
+        identity_names = extract_names_from_identity(synapse.identity)
+        if identity_names:
+            requirements['target_names'] = identity_names
+            bt.logging.info(f"🎯 Extracted {len(identity_names)} target names from synapse.identity: {identity_names}")
+    
+    # If no target names found in query, try to get from synapse attributes
+    elif not requirements['target_names'] and synapse:
+        synapse_names = extract_names_from_synapse(synapse)
+        if synapse_names:
+            requirements['target_names'] = synapse_names
+            bt.logging.info(f"🎯 Extracted target names from synapse attributes: {synapse_names}")
+    
+    # Final validation
+    if not requirements['target_names']:
+        bt.logging.error("❌ CRITICAL: No target names found! This will cause severe penalties!")
+        bt.logging.error(f"Query: {query_template[:200]}...")
+        if synapse:
+            bt.logging.error(f"Synapse has identity: {hasattr(synapse, 'identity')}")
+            if hasattr(synapse, 'identity'):
+                bt.logging.error(f"Identity count: {len(synapse.identity) if synapse.identity else 0}")
+    
+    return requirements
+
+
+def validate_requirements(requirements: Dict[str, Any]) -> bool:
+    """
+    Validate that requirements are complete to avoid penalties.
+    """
+    issues = []
+    
+    # Check target names
+    if not requirements.get('target_names'):
+        issues.append("No target names - will cause extra/missing names penalties")
+    
+    # Check variation count
+    if requirements.get('variation_count', 0) <= 0:
+        issues.append("Invalid variation count")
+    
+    # Check rule percentage
+    rule_pct = requirements.get('rule_percentage', 0)
+    if rule_pct < 0 or rule_pct > 1:
+        issues.append(f"Invalid rule percentage: {rule_pct}")
+    
+    if issues:
+        bt.logging.error("❌ Requirements validation failed:")
+        for issue in issues:
+            bt.logging.error(f"   - {issue}")
+        return False
+    
+    bt.logging.info("✅ Requirements validation passed")
+    return True
 
 
 if __name__ == "__main__":

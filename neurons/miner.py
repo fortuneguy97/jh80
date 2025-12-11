@@ -179,7 +179,8 @@ class Miner(BaseMinerNeuron):
         try:
             # Step 1: Parse query template to extract requirements
             bt.logging.info("#📋 Step 1: Parsing query template...")
-            parsed_query = parse_query_template(synapse.query_template)
+            from parse_query.parse_query import get_complete_requirements
+            parsed_query = get_complete_requirements(synapse.query_template, synapse)
             
             bt.logging.info("=" * 80)
             print(parsed_query)
@@ -188,9 +189,25 @@ class Miner(BaseMinerNeuron):
             bt.logging.info("#🔄 Step 2: Generating identity variations...")
             variations = {}
             variation_count = parsed_query.get('variation_count', 15)
-            for i, identity in enumerate(synapse.identity):
-                # Extract identity components
-                name = identity[0] if len(identity) > 0 else "Unknown"
+            
+            # CRITICAL FIX: Process target names from parsed query to prevent extra names penalty
+            target_names = parsed_query.get('target_names', [])
+            if not target_names:
+                # Fallback: extract from synapse.identity if parsing failed
+                bt.logging.warning("No target names found in parsed query, falling back to synapse.identity")
+                target_names = [identity[0] for identity in synapse.identity if len(identity) > 0]
+            
+            bt.logging.info(f"Processing {len(target_names)} target names: {target_names}")
+            
+            # Create identity lookup for efficient access
+            identity_lookup = {}
+            for identity in synapse.identity:
+                if len(identity) > 0:
+                    identity_lookup[identity[0]] = identity
+            
+            for name in target_names:
+                # Get identity components from lookup
+                identity = identity_lookup.get(name, [name, "1990-01-01", "Unknown"])
                 dob = identity[1] if len(identity) > 1 else "1990-01-01"
                 address = identity[2] if len(identity) > 2 else "Unknown"
                 
@@ -213,7 +230,7 @@ class Miner(BaseMinerNeuron):
                 except Exception as e:
                     bt.logging.error(f"#   ✗ Error processing {name}: {e}")
                     # Fallback: create basic variations
-                    variations[name] = [[name, dob, address]] * parsed_query.get('variation_count', 15)
+                    variations[name] = [[name, dob, address]] * variation_count
             
             # Set variations in synapse
             synapse.variations = variations
