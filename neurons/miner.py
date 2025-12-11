@@ -112,8 +112,6 @@ class Miner(BaseMinerNeuron):
         
         super(Miner, self).__init__(config=config)
         
-        bt.logging.info("#🏗️  Initializing Modular Identity Variation Miner")
-        
         # Set up validator verification
         self.axon.verify_fns[IdentitySynapse.__name__] = self._verify_validator_request
         
@@ -165,7 +163,6 @@ class Miner(BaseMinerNeuron):
 
     async def forward(self, synapse: IdentitySynapse) -> IdentitySynapse:
         
-        bt.logging.info(f"#🎯 Processing request with {len(synapse.identity)} identities")
         
         # Generate a unique run ID using timestamp
         run_id = int(time.time())
@@ -173,18 +170,15 @@ class Miner(BaseMinerNeuron):
         
         # Get timeout from synapse (default to 120s if not specified)
         timeout = getattr(synapse, 'timeout', 120.0)
-        bt.logging.info(f"#⏱️  Request timeout: {timeout:.1f}s")
-        print(synapse.identity)
-        bt.logging.info("=" * 80)
+        bt.logging.info("*" * 80)
+        print(synapse)
+        bt.logging.info("*" * 80)
         try:
             # Step 1: Parse query template to extract requirements
             bt.logging.info("#📋 Step 1: Parsing query template...")
             from parse_query.parse_query import get_complete_requirements
             parsed_query = get_complete_requirements(synapse.query_template, synapse)
             
-            bt.logging.info("=" * 80)
-            print(parsed_query)
-            bt.logging.info("=" * 80)
             # Step 2: Generate variations for each identity
             bt.logging.info("#🔄 Step 2: Generating identity variations...")
             variations = {}
@@ -239,21 +233,21 @@ class Miner(BaseMinerNeuron):
             total_time = time.time() - start_time
             total_variations = sum(len(v) for v in variations.values())
             
-            bt.logging.info("=" * 80)
-            bt.logging.info("✅ MODULAR GENERATION COMPLETE")
-            bt.logging.info(f"   ⏱️  Processing time: {total_time:.2f}s of {timeout:.1f}s allowed")
-            bt.logging.info(f"   👥 Identities processed: {len(variations)}/{len(synapse.identity)}")
-            bt.logging.info(f"   📊 Total variations: {total_variations}")
-            bt.logging.info(f"   📈 Average per identity: {total_variations / len(variations) if variations else 0:.1f}")
-            bt.logging.info("=" * 80)
+            # bt.logging.info("=" * 80)
+            # bt.logging.info("✅ MODULAR GENERATION COMPLETE")
+            # bt.logging.info(f"   ⏱️  Processing time: {total_time:.2f}s of {timeout:.1f}s allowed")
+            # bt.logging.info(f"   👥 Identities processed: {len(variations)}/{len(synapse.identity)}")
+            # bt.logging.info(f"   📊 Total variations: {total_variations}")
+            # bt.logging.info(f"   📈 Average per identity: {total_variations / len(variations) if variations else 0:.1f}")
+            # bt.logging.info("=" * 80)
             
             # Log sample output for debugging
             if variations:
                 sample_name = list(variations.keys())[0]
                 sample_vars = variations[sample_name]  # First 3 variations
-                bt.logging.info(f"#📝 Sample variations for '{sample_name}':")
+                print(f"#📝 Sample variations for '{sample_name}':")
                 for i, var in enumerate(sample_vars, 1):
-                    bt.logging.info(f"#   {i}. Name: {var[0]}, DOB: {var[1]}, Address: {var[2]}...")
+                    print(f"#   {i}. Name: {var[0]}, DOB: {var[1]}, Address: {var[2]}...")
             
         except Exception as e:
             bt.logging.error(f"#✗ Unexpected error in modular generation: {e}")

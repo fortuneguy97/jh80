@@ -88,6 +88,34 @@ def parse_query_template(query_template: str) -> Dict[str, Any]:
     if uav_seed:
         requirements['uav_seed_name'] = uav_seed
     
+    # Validation and warnings only
+    phonetic_sim = requirements['phonetic_similarity']
+    ortho_sim = requirements['orthographic_similarity']
+    rules = requirements['rules']
+    
+    # Keep only critical warnings and errors
+    if not phonetic_sim:
+        bt.logging.warning("⚠️ PHONETIC SIMILARITY: Not specified in query")
+    
+    if not ortho_sim:
+        bt.logging.warning("⚠️ ORTHOGRAPHIC SIMILARITY: Not specified in query")
+    
+    if not rules:
+        bt.logging.warning("⚠️ RULES: No specific transformation rules detected")
+    
+    # Validation errors
+    if requirements['variation_count'] <= 0:
+        bt.logging.error("❌ Invalid variation count")
+    
+    if requirements['rule_percentage'] < 0 or requirements['rule_percentage'] > 1:
+        bt.logging.error(f"❌ Invalid rule percentage: {requirements['rule_percentage']}")
+    
+    if not phonetic_sim and not ortho_sim:
+        bt.logging.warning("⚠️ No similarity requirements specified")
+    
+    # Log formatted requirements before returning
+    bt.logging.info(f"📋 PARSED REQUIREMENTS: {requirements}")
+    
     return requirements
 
 
@@ -251,7 +279,6 @@ def _extract_phonetic_similarity(query_template: str) -> Dict[str, float]:
             if phonetic_sim:
                 break
     
-    bt.logging.debug(f"Extracted phonetic similarity: {phonetic_sim}")
     return phonetic_sim
 
 
@@ -290,7 +317,6 @@ def _extract_orthographic_similarity(query_template: str) -> Dict[str, float]:
             if ortho_sim:
                 break
     
-    bt.logging.debug(f"Extracted orthographic similarity: {ortho_sim}")
     return ortho_sim
 
 
@@ -372,7 +398,6 @@ def extract_names_from_identity(identity_list) -> List[str]:
                 if _is_valid_name(cleaned_name):
                     names.append(cleaned_name)
     
-    bt.logging.info(f"Extracted {len(names)} names from identity list")
     return names
 
 
@@ -445,14 +470,12 @@ def get_complete_requirements(query_template: str, synapse=None) -> Dict[str, An
         identity_names = extract_names_from_identity(synapse.identity)
         if identity_names:
             requirements['target_names'] = identity_names
-            bt.logging.info(f"🎯 Extracted {len(identity_names)} target names from synapse.identity: {identity_names}")
     
     # If no target names found in query, try to get from synapse attributes
     elif not requirements['target_names'] and synapse:
         synapse_names = extract_names_from_synapse(synapse)
         if synapse_names:
             requirements['target_names'] = synapse_names
-            bt.logging.info(f"🎯 Extracted target names from synapse attributes: {synapse_names}")
     
     # Final validation
     if not requirements['target_names']:
@@ -491,7 +514,6 @@ def validate_requirements(requirements: Dict[str, Any]) -> bool:
             bt.logging.error(f"   - {issue}")
         return False
     
-    bt.logging.info("✅ Requirements validation passed")
     return True
 
 
