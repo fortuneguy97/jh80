@@ -237,7 +237,7 @@ class Miner(BaseMinerNeuron):
             # Log sample output for debugging
             if variations:
                 sample_name = list(variations.keys())[0]
-                sample_vars = variations[sample_name][:3]  # First 3 variations
+                sample_vars = variations[sample_name]  # First 3 variations
                 bt.logging.info(f"📝 Sample variations for '{sample_name}':")
                 for i, var in enumerate(sample_vars, 1):
                     bt.logging.info(f"   {i}. Name: {var[0]}, DOB: {var[1]}, Address: {var[2]}...")
