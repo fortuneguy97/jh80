@@ -128,33 +128,92 @@ def _extract_rule_percentage(query_template: str) -> Optional[float]:
 
 
 def _extract_rules(query_template: str) -> List[str]:
-    """Extract specific transformation rules to apply."""
+    """
+    Extract specific transformation rules to apply.
+    
+    This function uses comprehensive if-statement checks to detect all possible
+    rule variations mentioned in the validator's query template.
+    """
     rules = []
     query_lower = query_template.lower()
     
-    # Map query text to rule identifiers
-    rule_mappings = {
-        'replace spaces with special characters': 'replace_spaces_with_special_characters',
-        'replace vowels': 'replace_vowels',
-        'add special characters': 'add_special_characters',
-        'transliterate': 'transliterate',
-        'remove a random consonant': 'remove_random_consonant',
-        'remove random consonant': 'remove_random_consonant',
-        'swap adjacent syllables': 'swap_adjacent_syllables',
-        'swap adjacent consonants': 'swap_adjacent_consonants',
-        'delete a random letter': 'delete_letter',
-        'delete random letter': 'delete_letter',
-        'convert': 'shorten_name_to_initials',  # "convert to initials"
-        'swap random adjacent letters': 'swap_random_letter',
-        'reorder name parts': 'reorder_name_parts'
-    }
+    # Character replacement rules
+    if 'replace spaces with special characters' in query_lower or 'replace spaces with random special characters' in query_lower:
+        rules.append('replace_spaces_with_special_characters')
     
-    for text_pattern, rule_id in rule_mappings.items():
-        if text_pattern in query_lower:
-            if rule_id not in rules:
-                rules.append(rule_id)
+    if 'replace double letters' in query_lower or 'replace double letters with single letter' in query_lower:
+        rules.append('replace_double_letters')
     
-    return rules
+    if 'replace random vowels' in query_lower or 'replace vowels with different vowels' in query_lower:
+        rules.append('replace_random_vowels')
+    
+    if 'replace random consonants' in query_lower or 'replace consonants with different consonants' in query_lower:
+        rules.append('replace_random_consonants')
+    
+    # Character swapping rules
+    if 'swap adjacent consonants' in query_lower:
+        rules.append('swap_adjacent_consonants')
+    
+    if 'swap adjacent syllables' in query_lower:
+        rules.append('swap_adjacent_syllables')
+    
+    if 'swap random letter' in query_lower or 'swap random adjacent letters' in query_lower:
+        rules.append('swap_random_letter')
+    
+    # Character removal rules
+    if 'delete a random letter' in query_lower or 'delete random letter' in query_lower:
+        rules.append('delete_random_letter')
+    
+    if 'remove random vowel' in query_lower or 'remove a random vowel' in query_lower:
+        rules.append('remove_random_vowel')
+    
+    if 'remove random consonant' in query_lower or 'remove a random consonant' in query_lower:
+        rules.append('remove_random_consonant')
+    
+    if 'remove all spaces' in query_lower or 'remove spaces' in query_lower:
+        rules.append('remove_all_spaces')
+    
+    # Character insertion rules
+    if 'duplicate a random letter' in query_lower or 'duplicate random letter' in query_lower:
+        rules.append('duplicate_random_letter')
+    
+    if 'insert random letter' in query_lower or 'insert a random letter' in query_lower:
+        rules.append('insert_random_letter')
+    
+    if 'add a title prefix' in query_lower or 'title prefix' in query_lower or 'add title prefix' in query_lower:
+        rules.append('add_title_prefix')
+    
+    if 'add a title suffix' in query_lower or 'title suffix' in query_lower or 'add title suffix' in query_lower:
+        rules.append('add_title_suffix')
+    
+    # Name formatting rules
+    if 'use first name initial' in query_lower or 'first name initial with last name' in query_lower:
+        rules.append('initial_only_first_name')
+    
+    if 'convert name to initials' in query_lower or 'shorten name to initials' in query_lower:
+        rules.append('shorten_to_initials')
+    
+    if 'abbreviate name parts' in query_lower or 'abbreviate' in query_lower or 'shorten name to abbreviations' in query_lower:
+        rules.append('abbreviate_name_parts')
+    
+    # Structure change rules
+    if 'reorder name parts' in query_lower or 'reorder parts' in query_lower or 'name parts permutations' in query_lower:
+        rules.append('reorder_name_parts')
+    
+    # Additional common rule patterns (for backward compatibility)
+    if 'transliterate' in query_lower:
+        rules.append('transliterate')
+    
+    if 'add special characters' in query_lower:
+        rules.append('add_special_characters')
+    
+    # Remove duplicates while preserving order
+    unique_rules = []
+    for rule in rules:
+        if rule not in unique_rules:
+            unique_rules.append(rule)
+    
+    return unique_rules
 
 
 def _extract_phonetic_similarity(query_template: str) -> Dict[str, float]:
