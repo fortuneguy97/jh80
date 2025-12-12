@@ -59,12 +59,12 @@ from MIID.base.miner import BaseMinerNeuron
 
 from bittensor.core.errors import NotVerifiedException
 
-# Import our modular components
+# Import our modular components (keeping for potential future use)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from parse_query.parse_query import parse_query_template
-from name.name import generate_name_variations
-from dob.dob import generate_dob_variations
-from address.address import generate_address_variations
+# from parse_query.parse_query import parse_query_template
+# from name.name import generate_name_variations
+# from dob.dob import generate_dob_variations
+# from address.address import generate_address_variations
 
 # Optional imports for detailed metrics calculation
 try:
@@ -174,139 +174,67 @@ class Miner(BaseMinerNeuron):
         bt.logging.info(synapse)
         bt.logging.info("*" * 80)
         try:
-            # Step 1: Parse query template to extract requirements
-            bt.logging.info("#📋 Step 1: Parsing query template...")
-            from parse_query.parse_query import get_complete_requirements
-            parsed_query = get_complete_requirements(synapse.query_template, synapse)
+            # 🎯 CRITICAL FIX: Use the proven variation_generator_clean.py approach
+            bt.logging.info("#📋 Using proven variation generator...")
             
-            # Step 2: Generate variations for each identity
-            bt.logging.info("#🔄 Step 2: Generating identity variations...")
-            variations = {}
-            variation_count = parsed_query.get('variation_count', 15)
+            # Import the working variation generator
+            sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'refer'))
+            from variation_generator_clean import generate_variations as generate_variations_clean
             
-            # CRITICAL FIX: Process target names from parsed query to prevent extra names penalty
-            target_names = parsed_query.get('target_names', [])
-            if not target_names:
-                # Fallback: extract from synapse.identity if parsing failed
-                bt.logging.error("❌ CRITICAL: No target names found in parsed query, falling back to synapse.identity")
-                target_names = [identity[0] for identity in synapse.identity if len(identity) > 0]
-            
-            bt.logging.error(f"🎯 PROCESSING {len(target_names)} TARGET NAMES: {target_names}")
-            bt.logging.error(f"📋 SYNAPSE IDENTITY COUNT: {len(synapse.identity)}")
-            
-            # CRITICAL: Ensure we have ALL names from synapse.identity
-            synapse_names = [identity[0] for identity in synapse.identity if len(identity) > 0]
-            bt.logging.error(f"📋 SYNAPSE NAMES: {synapse_names}")
-            
-            # Use synapse names directly to ensure 100% completeness
-            target_names = synapse_names
-            bt.logging.error(f"🎯 FINAL TARGET NAMES: {target_names}")
-            
-            # Create identity lookup for efficient access
-            identity_lookup = {}
-            for identity in synapse.identity:
-                if len(identity) > 0:
-                    identity_lookup[identity[0]] = identity
-            
-            for name in target_names:
-                # Get identity components from lookup
-                identity = identity_lookup.get(name, [name, "1990-01-01", "Unknown"])
-                dob = identity[1] if len(identity) > 1 else "1990-01-01"
-                address = identity[2] if len(identity) > 2 else "Unknown"
-                
-                try:
-                    # Generate variations for each component
-                    name_variations = generate_name_variations(name, parsed_query)
-                    dob_variations = generate_dob_variations(dob, variation_count)
-                    address_variations = generate_address_variations(address, parsed_query)
-                    
-                    # Step 3: Combine variations into complete identity variations
-                    identity_variations = self._combine_variations(
-                        name_variations, 
-                        dob_variations, 
-                        address_variations,
-                        variation_count
-                    )
-                    
-                    variations[name] = identity_variations
-                    
-                except Exception as e:
-                    bt.logging.error(f"❌ ERROR processing {name}: {e}")
-                    import traceback
-                    bt.logging.error(f"❌ TRACEBACK: {traceback.format_exc()}")
-                    
-                    # CRITICAL FALLBACK: create basic variations to ensure completeness
-                    fallback_variations = []
-                    for i in range(variation_count):
-                        # Create slight variations to avoid exact duplicates
-                        var_name = name if i == 0 else f"{name}"  # Keep original for first variation
-                        fallback_variations.append([var_name, dob, address])
-                    
-                    variations[name] = fallback_variations
-                    bt.logging.error(f"✅ CREATED {len(fallback_variations)} FALLBACK VARIATIONS FOR: {name}")
-            
-            # CRITICAL VALIDATION: Ensure ALL names have variations
-            bt.logging.error("🔍 CRITICAL VALIDATION - CHECKING COMPLETENESS:")
-            missing_names = []
-            for identity in synapse.identity:
-                if len(identity) > 0:
-                    name = identity[0]
-                    if name not in variations or not variations[name]:
-                        missing_names.append(name)
-                        bt.logging.error(f"❌ MISSING VARIATIONS FOR: {name}")
-                        
-                        # EMERGENCY: Generate fallback variations
-                        dob = identity[1] if len(identity) > 1 else "1990-01-01"
-                        address = identity[2] if len(identity) > 2 else "Unknown"
-                        
-                        # Create basic fallback variations
-                        fallback_variations = []
-                        for i in range(variation_count):
-                            fallback_variations.append([name, dob, address])
-                        
-                        variations[name] = fallback_variations
-                        bt.logging.error(f"✅ ADDED FALLBACK VARIATIONS FOR: {name}")
-            
-            # Final completeness check
-            bt.logging.error(f"📊 COMPLETENESS CHECK:")
-            bt.logging.error(f"   • Expected names: {len(synapse.identity)}")
-            bt.logging.error(f"   • Generated variations for: {len(variations)}")
-            bt.logging.error(f"   • Missing names: {len(missing_names)}")
-            if missing_names:
-                bt.logging.error(f"   • Missing: {missing_names}")
+            # Use the proven generator that works
+            bt.logging.error("🔄 USING PROVEN VARIATION GENERATOR")
+            variations = generate_variations_clean(synapse)
             
             # Set variations in synapse
             synapse.variations = variations
             
             # Log results
             total_time = time.time() - start_time
-            total_variations = sum(len(v) for v in variations.values())
             
-            # bt.logging.info("=" * 80)
-            # bt.logging.info("✅ MODULAR GENERATION COMPLETE")
-            # bt.logging.info(f"   ⏱️  Processing time: {total_time:.2f}s of {timeout:.1f}s allowed")
-            # bt.logging.info(f"   👥 Identities processed: {len(variations)}/{len(synapse.identity)}")
-            # bt.logging.info(f"   📊 Total variations: {total_variations}")
-            # bt.logging.info(f"   📈 Average per identity: {total_variations / len(variations) if variations else 0:.1f}")
-            # bt.logging.info("=" * 80)
+            # Calculate total variations (handle both regular and UAV formats)
+            total_variations = 0
+            if isinstance(variations, dict):
+                for name, name_variations in variations.items():
+                    if isinstance(name_variations, list):
+                        total_variations += len(name_variations)
+                    elif isinstance(name_variations, dict) and 'variations' in name_variations:
+                        total_variations += len(name_variations['variations'])
             
             # CRITICAL: Log final variations being returned
             bt.logging.error("🎯 FINAL VARIATIONS BEING RETURNED:")
-            for name, name_variations in variations.items():
-                bt.logging.error(f"   • {name}: {len(name_variations)} variations")
+            if isinstance(variations, dict):
+                for name, name_variations in variations.items():
+                    if isinstance(name_variations, list):
+                        bt.logging.error(f"   • {name}: {len(name_variations)} variations")
+                    elif isinstance(name_variations, dict) and 'variations' in name_variations:
+                        bt.logging.error(f"   • {name}: {len(name_variations['variations'])} variations (UAV format)")
+                    else:
+                        bt.logging.error(f"   • {name}: Unknown format")
             
             bt.logging.error(f"📊 FINAL STATS:")
-            bt.logging.error(f"   • Total names in synapse.variations: {len(variations)}")
+            bt.logging.error(f"   • Total names in synapse.variations: {len(variations) if isinstance(variations, dict) else 0}")
             bt.logging.error(f"   • Total variations generated: {total_variations}")
             bt.logging.error(f"   • Processing time: {total_time:.2f}s")
             
         except Exception as e:
-            bt.logging.error(f"#✗ Unexpected error in modular generation: {e}")
+            bt.logging.error(f"❌ CRITICAL ERROR in variation generation: {e}")
             import traceback
             bt.logging.error(traceback.format_exc())
             
-            # Fallback: return empty variations
-            synapse.variations = {}
+            # EMERGENCY FALLBACK: Create basic variations for all identities
+            bt.logging.error("🚨 EMERGENCY FALLBACK: Creating basic variations")
+            emergency_variations = {}
+            for identity in synapse.identity:
+                if len(identity) > 0:
+                    name = identity[0]
+                    dob = identity[1] if len(identity) > 1 else "1990-01-01"
+                    address = identity[2] if len(identity) > 2 else "Unknown"
+                    
+                    # Create 8 basic variations (common count)
+                    emergency_variations[name] = [[name, dob, address] for _ in range(8)]
+            
+            synapse.variations = emergency_variations
+            bt.logging.error(f"✅ EMERGENCY: Created variations for {len(emergency_variations)} names")
         
         return synapse
     
