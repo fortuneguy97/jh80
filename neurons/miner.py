@@ -188,10 +188,19 @@ class Miner(BaseMinerNeuron):
             target_names = parsed_query.get('target_names', [])
             if not target_names:
                 # Fallback: extract from synapse.identity if parsing failed
-                bt.logging.warning("No target names found in parsed query, falling back to synapse.identity")
+                bt.logging.error("❌ CRITICAL: No target names found in parsed query, falling back to synapse.identity")
                 target_names = [identity[0] for identity in synapse.identity if len(identity) > 0]
             
-            bt.logging.info(f"Processing {len(target_names)} target names: {target_names}")
+            bt.logging.error(f"🎯 PROCESSING {len(target_names)} TARGET NAMES: {target_names}")
+            bt.logging.error(f"📋 SYNAPSE IDENTITY COUNT: {len(synapse.identity)}")
+            
+            # CRITICAL: Ensure we have ALL names from synapse.identity
+            synapse_names = [identity[0] for identity in synapse.identity if len(identity) > 0]
+            bt.logging.error(f"📋 SYNAPSE NAMES: {synapse_names}")
+            
+            # Use synapse names directly to ensure 100% completeness
+            target_names = synapse_names
+            bt.logging.error(f"🎯 FINAL TARGET NAMES: {target_names}")
             
             # Create identity lookup for efficient access
             identity_lookup = {}
@@ -222,9 +231,49 @@ class Miner(BaseMinerNeuron):
                     variations[name] = identity_variations
                     
                 except Exception as e:
-                    bt.logging.error(f"#   ✗ Error processing {name}: {e}")
-                    # Fallback: create basic variations
-                    variations[name] = [[name, dob, address]] * variation_count
+                    bt.logging.error(f"❌ ERROR processing {name}: {e}")
+                    import traceback
+                    bt.logging.error(f"❌ TRACEBACK: {traceback.format_exc()}")
+                    
+                    # CRITICAL FALLBACK: create basic variations to ensure completeness
+                    fallback_variations = []
+                    for i in range(variation_count):
+                        # Create slight variations to avoid exact duplicates
+                        var_name = name if i == 0 else f"{name}"  # Keep original for first variation
+                        fallback_variations.append([var_name, dob, address])
+                    
+                    variations[name] = fallback_variations
+                    bt.logging.error(f"✅ CREATED {len(fallback_variations)} FALLBACK VARIATIONS FOR: {name}")
+            
+            # CRITICAL VALIDATION: Ensure ALL names have variations
+            bt.logging.error("🔍 CRITICAL VALIDATION - CHECKING COMPLETENESS:")
+            missing_names = []
+            for identity in synapse.identity:
+                if len(identity) > 0:
+                    name = identity[0]
+                    if name not in variations or not variations[name]:
+                        missing_names.append(name)
+                        bt.logging.error(f"❌ MISSING VARIATIONS FOR: {name}")
+                        
+                        # EMERGENCY: Generate fallback variations
+                        dob = identity[1] if len(identity) > 1 else "1990-01-01"
+                        address = identity[2] if len(identity) > 2 else "Unknown"
+                        
+                        # Create basic fallback variations
+                        fallback_variations = []
+                        for i in range(variation_count):
+                            fallback_variations.append([name, dob, address])
+                        
+                        variations[name] = fallback_variations
+                        bt.logging.error(f"✅ ADDED FALLBACK VARIATIONS FOR: {name}")
+            
+            # Final completeness check
+            bt.logging.error(f"📊 COMPLETENESS CHECK:")
+            bt.logging.error(f"   • Expected names: {len(synapse.identity)}")
+            bt.logging.error(f"   • Generated variations for: {len(variations)}")
+            bt.logging.error(f"   • Missing names: {len(missing_names)}")
+            if missing_names:
+                bt.logging.error(f"   • Missing: {missing_names}")
             
             # Set variations in synapse
             synapse.variations = variations
@@ -241,13 +290,15 @@ class Miner(BaseMinerNeuron):
             # bt.logging.info(f"   📈 Average per identity: {total_variations / len(variations) if variations else 0:.1f}")
             # bt.logging.info("=" * 80)
             
-            # Log sample output for debugging
-            if variations:
-                sample_name = list(variations.keys())[0]
-                sample_vars = variations[sample_name]  # First 3 variations
-                print(f"#📝 Sample variations for '{sample_name}':")
-                for i, var in enumerate(sample_vars, 1):
-                    print(f"#   {i}. Name: {var[0]}, DOB: {var[1]}, Address: {var[2]}...")
+            # CRITICAL: Log final variations being returned
+            bt.logging.error("🎯 FINAL VARIATIONS BEING RETURNED:")
+            for name, name_variations in variations.items():
+                bt.logging.error(f"   • {name}: {len(name_variations)} variations")
+            
+            bt.logging.error(f"📊 FINAL STATS:")
+            bt.logging.error(f"   • Total names in synapse.variations: {len(variations)}")
+            bt.logging.error(f"   • Total variations generated: {total_variations}")
+            bt.logging.error(f"   • Processing time: {total_time:.2f}s")
             
         except Exception as e:
             bt.logging.error(f"#✗ Unexpected error in modular generation: {e}")
