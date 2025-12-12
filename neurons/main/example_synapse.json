@@ -1,0 +1,23 @@
+{
+    "timeout": 810.0,
+    "identity": [
+        ["hector hernandez", "1944-01-09", "North Macedonia"],
+        ["Valery Semyonov", "1960-9-16", "Russia"],
+        ["christiane lecomte", "1994-06-20", "Central African Republic"],
+        ["teresa phillips", "1926-09-19", "South Africa"],
+        ["martha roberts", "1953-07-08", "New Zealand"],
+        ["Mohammad Kiram", "1990-3-3", "Syria"],
+        ["ronald miranda", "1988-11-28", "South Africa"],
+        ["erika nichols", "1966-10-30", "Zimbabwe"],
+        ["فهد الدجاني", "1973-01-03", "Chile"],
+        ["мстислав смирнова", "1964-11-29", "Luhansk"],
+        ["dakota brown", "1930-10-12", "Uzbekistan"],
+        ["chita silva", "1963-12-20", "Bolivia"],
+        ["Никита Мордашов", "2000-12-16", "Russia"],
+        ["Muhammad Nasar", "1976-1-1", "Saudi Arabia"],
+        ["Mikhail PLISYUK", "1963-9-3", "Russia"]
+    ],
+    "query_template": "Generate 15 name variations for {name}. Ensure phonetic similarity by generating names with sound-alike characteristics based on 10% Light, 50% Medium, and 40% Far similarities. Also, ensure orthographic similarity by generating names with visual-similarities based on 30% Light, 40% Medium, and 30% Far similarities. Approximately 60% of the total variations should follow these specific rule-based transformations: Remove a random consonant and generate variations that meet these phonetic and orthographic criteria. The following address is the seed country/city to generate address variations for: {address}. Generate unique real addresses within the specified country/city for each variation. The following date of birth is the seed DOB to generate variations for: {dob}.\n\n[ADDITIONAL CONTEXT]:\n- Address variations should be realistic addresses within the specified country/city\n- DOB variations ATLEAST one in each category (±1 day, ±3 days, ±30 days, ±90 days, ±365 days, year+month only)\n- For year+month, generate the exact DOB without day\n- Each variation must have a different, realistic address and DOB\n\n[UAV REQUIREMENTS - Phase 3]:\nReturn variations in the NEW structure. For the seed \"chita silva\" ONLY, use this structure:\n{\n  \"chita silva\": {\n    \"variations\": [\n                [\n                    \"name_var\",\n                    \"dob_var\",\n                    \"addr_var\"\n                ], ...\n            ],\n    \"uav\": {\n      \"address\": \"address_variant\",\n      \"label\": \"explanation\",\n      \"latitude\": 0.0,\n      \"longitude\": 0.0\n            }\n        }\n    }\n\nFor all OTHER seeds, use the standard structure (variations only):\n{\n  \"other_seed_name\": [\n            [\n                \"name_var\",\n                \"dob_var\",\n                \"addr_var\"\n            ], ...\n        ]\n    }\n\nUAV = Unknown Attack Vector: An address from the seed's country/city/region that looks legitimate but might fail geocoding.\nExamples: \"123 Main Str\" (typo), \"456 Oak Av\" (abbreviation), \"789 1st St\" (missing direction)\nLabel examples: \"Common typo\", \"Local abbreviation\", \"Missing street direction\"",
+    "variations": {},
+    "process_time": null
+}

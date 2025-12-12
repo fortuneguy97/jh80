@@ -170,19 +170,18 @@ class Miner(BaseMinerNeuron):
         
         # Get timeout from synapse (default to 120s if not specified)
         timeout = getattr(synapse, 'timeout', 120.0)
-        bt.logging.info("*" * 80)
-        bt.logging.info(synapse)
-        bt.logging.info("*" * 80)
+        print("*" * 80)
+        print(synapse)
+        print("*" * 80)
         try:
-            # 🎯 CRITICAL FIX: Use the proven variation_generator_clean.py approach
-            bt.logging.info("#📋 Using proven variation generator...")
             
-            # Import the working variation generator
-            sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'refer'))
-            from variation_generator_clean import generate_variations as generate_variations_clean
+            # Import the working variation generator (now split into modules)
+            sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'main'))
+            from _index import generate_variations as generate_variations_clean
+            
             
             # Use the proven generator that works
-            bt.logging.error("🔄 USING PROVEN VARIATION GENERATOR")
+            bt.logging.info("🔄 USING PROVEN VARIATION GENERATOR")
             variations = generate_variations_clean(synapse)
             
             # Set variations in synapse
@@ -201,20 +200,20 @@ class Miner(BaseMinerNeuron):
                         total_variations += len(name_variations['variations'])
             
             # CRITICAL: Log final variations being returned
-            bt.logging.error("🎯 FINAL VARIATIONS BEING RETURNED:")
+            bt.logging.info("🎯 FINAL VARIATIONS BEING RETURNED:")
             if isinstance(variations, dict):
                 for name, name_variations in variations.items():
                     if isinstance(name_variations, list):
-                        bt.logging.error(f"   • {name}: {len(name_variations)} variations")
+                        bt.logging.info(f"   • {name}: {len(name_variations)} variations")
                     elif isinstance(name_variations, dict) and 'variations' in name_variations:
-                        bt.logging.error(f"   • {name}: {len(name_variations['variations'])} variations (UAV format)")
+                        bt.logging.info(f"   • {name}: {len(name_variations['variations'])} variations (UAV format)")
                     else:
                         bt.logging.error(f"   • {name}: Unknown format")
             
-            bt.logging.error(f"📊 FINAL STATS:")
-            bt.logging.error(f"   • Total names in synapse.variations: {len(variations) if isinstance(variations, dict) else 0}")
-            bt.logging.error(f"   • Total variations generated: {total_variations}")
-            bt.logging.error(f"   • Processing time: {total_time:.2f}s")
+            bt.logging.info(f"📊 FINAL STATS:")
+            bt.logging.info(f"   • Total names in synapse.variations: {len(variations) if isinstance(variations, dict) else 0}")
+            bt.logging.info(f"   • Total variations generated: {total_variations}")
+            bt.logging.info(f"   • Processing time: {total_time:.2f}s")
             
         except Exception as e:
             bt.logging.error(f"❌ CRITICAL ERROR in variation generation: {e}")
@@ -237,70 +236,6 @@ class Miner(BaseMinerNeuron):
             bt.logging.error(f"✅ EMERGENCY: Created variations for {len(emergency_variations)} names")
         
         return synapse
-    
-    def _combine_variations(self, name_vars: List[str], dob_vars: List[str], 
-                          address_vars: List[str], target_count: int) -> List[List[str]]:
-        """
-        Combine name, DOB, and address variations into complete identity variations.
-        
-        Creates all possible combinations up to the target count, ensuring
-        each complete variation has a unique combination of components.
-        
-        Args:
-            name_vars: List of name variations
-            dob_vars: List of DOB variations  
-            address_vars: List of address variations
-            target_count: Target number of complete variations
-            
-        Returns:
-            List of complete identity variations [name, dob, address]
-        """
-        complete_variations = []
-        used_combinations = set()
-        
-        # Ensure we have enough variations in each component
-        # Extend lists if needed by cycling through existing variations
-        while len(name_vars) < target_count:
-            name_vars.extend(name_vars[:min(len(name_vars), target_count - len(name_vars))])
-        
-        while len(dob_vars) < target_count:
-            dob_vars.extend(dob_vars[:min(len(dob_vars), target_count - len(dob_vars))])
-            
-        while len(address_vars) < target_count:
-            address_vars.extend(address_vars[:min(len(address_vars), target_count - len(address_vars))])
-        
-        # Generate combinations
-        for i in range(target_count):
-            # Use modulo to cycle through variations if we run out
-            name_idx = i % len(name_vars)
-            dob_idx = i % len(dob_vars)
-            address_idx = i % len(address_vars)
-            
-            # Create combination
-            combination = (name_vars[name_idx], dob_vars[dob_idx], address_vars[address_idx])
-            
-            # Ensure uniqueness
-            combination_key = f"{combination[0]}|{combination[1]}|{combination[2]}"
-            if combination_key not in used_combinations:
-                complete_variations.append(list(combination))
-                used_combinations.add(combination_key)
-            else:
-                # If combination exists, try slight variation
-                # Offset one of the indices to create a different combination
-                alt_name_idx = (name_idx + 1) % len(name_vars)
-                alt_combination = (name_vars[alt_name_idx], dob_vars[dob_idx], address_vars[address_idx])
-                alt_key = f"{alt_combination[0]}|{alt_combination[1]}|{alt_combination[2]}"
-                
-                if alt_key not in used_combinations:
-                    complete_variations.append(list(alt_combination))
-                    used_combinations.add(alt_key)
-                else:
-                    # Last resort: just add the original combination
-                    complete_variations.append(list(combination))
-        
-        return complete_variations[:target_count]
-    
- 
     
     async def blacklist(
         self, synapse: IdentitySynapse
